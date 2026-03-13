@@ -360,39 +360,20 @@ section{padding:clamp(5rem,10vw,9rem) 0}
 
 .faq-item{background:var(--surface);overflow:hidden}
 
-.faq-q{
-  width:100%;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;
-  padding:1.4rem 1.6rem;
-  font-family:var(--ff-head);font-size:1.05rem;font-weight:700;
-  letter-spacing:.03em;text-transform:uppercase;
-  color:var(--ink);text-align:left;
-  background:transparent;border:none;cursor:pointer;
-  transition:background .2s,color .2s;
-  line-height:1.3;
-}
+.faq-q{  width:100%;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;padding:1.4rem 1.6rem;font-family:var(--ff-head);font-size:1.05rem;font-weight:700;letter-spacing:.03em;text-transform:uppercase;color:var(--ink);text-align:left;background:transparent;border:none;cursor:pointer;transition:background .2s,color .2s;line-height:1.3;}
 .faq-q:hover{background:var(--bg);color:var(--blue)}
 .faq-item.open .faq-q{background:var(--bg);color:var(--blue)}
 
-.faq-icon{
-  flex-shrink:0;width:24px;height:24px;border:1px solid var(--border);border-radius:50%;
-  display:flex;align-items:center;justify-content:center;
-  color:var(--blue);transition:transform .35s cubic-bezier(.16,1,.3,1),background .2s,border-color .2s;
-}
+.faq-icon{  flex-shrink:0;width:24px;height:24px;border:1px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--blue);transition:transform .35s cubic-bezier(.16,1,.3,1),background .2s,border-color .2s;}
 .faq-icon svg{display:block}
 .faq-item.open .faq-icon{transform:rotate(45deg);background:var(--blue-lt);border-color:var(--blue)}
 
-.faq-a-wrap{
-  display:grid;grid-template-rows:0fr;
-  transition:grid-template-rows .38s cubic-bezier(.16,1,.3,1);
-}
+.faq-a-wrap{display:grid;grid-template-rows:0fr;transition:grid-template-rows .38s cubic-bezier(.16,1,.3,1);}
 .faq-item.open .faq-a-wrap{grid-template-rows:1fr}
 
 .faq-a-inner{overflow:hidden}
 
-.faq-a{
-  padding:.1rem 1.6rem 1.5rem;
-  font-size:.9rem;font-weight:300;color:var(--muted);line-height:1.8;
-}
+.faq-a{padding:.1rem 1.6rem 1.5rem;  font-size:.9rem;font-weight:300;color:var(--muted);line-height:1.8;}
 .faq-a p+p{margin-top:.85rem}
 .faq-a strong{font-weight:500;color:var(--ink-soft)}
 
@@ -536,6 +517,7 @@ footer{background:#080808;border-top:1px solid rgba(255,255,255,.05);padding:4.5
   .about-pillars,.sectors-grid,.footer-grid,.services-grid,.process-steps{grid-template-columns:1fr}
   .hero-stat{min-width:100%}
   .modal-header,.modal-body{padding-left:1.4rem;padding-right:1.4rem}
+  .svc-tab{padding:.6rem}
 }
 </style>
 </head>
