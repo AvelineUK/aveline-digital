@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aveline.Digital — Google Business Profile Management</title>
+<title>Aveline.Digital — Local Digital Marketing for Small Businesses</title>
 <link rel="icon" href="favicon.svg" sizes="any" type="image/svg+xml">
 <style>
 /* ── RESET ─────────────────────────────────────────── */
@@ -234,7 +234,7 @@ nav.scrolled{background:rgba(245,245,243,.95);backdrop-filter:blur(16px);border-
 .marquee-item .dot{color:var(--blue);font-size:.45rem}
 
 /* ── SECTIONS ───────────────────────────────────────── */
-section{padding:clamp(5rem,10vw,9rem) 0}
+section{padding:clamp(5rem,10vw,9rem) 0;scroll-margin-top:72px}
 
 .s-title{font-family:var(--ff-head);font-size:clamp(2.6rem,4.5vw,4rem);font-weight:800;letter-spacing:.01em;line-height:.95;color:var(--ink);text-transform:uppercase}
 .s-title .b{color:var(--blue)}
@@ -278,29 +278,18 @@ section{padding:clamp(5rem,10vw,9rem) 0}
 .floater-sub{font-size:.75rem;color:var(--muted)}
 
 /* ── SERVICES ───────────────────────────────────────── */
-.services{background:var(--surface)}
-.services-header{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;margin-bottom:2.5rem}
-.services-intro{font-size:1rem;font-weight:300;color:var(--muted);line-height:1.8}
+.service-section{background:var(--surface)}
+.service-section:nth-child(odd){background:var(--bg)}
+.service-section-header{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;margin-bottom:3rem}
+.service-section-intro{font-size:1rem;font-weight:300;color:var(--muted);line-height:1.8}
+.service-section-tag{font-family:var(--ff-head);font-size:.68rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--blue);margin-bottom:.6rem}
 
-/* Tab bar */
-.services-tabs{display:flex;gap:0;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-bottom:2.5rem;background:var(--bg)}
-.svc-tab{flex:1;padding:.95rem 1.2rem;font-family:var(--ff-head);font-size:1rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);background:transparent;border:none;cursor:pointer;transition:background .2s,color .2s;border-right:1px solid var(--border);text-align:center}
-.svc-tab:last-child{border-right:none}
-.svc-tab:hover{color:var(--ink);background:var(--bg-2)}
-.svc-tab.active{background:var(--blue);color:#fff}
-.svc-tab .tab-sub{display:block;font-size:.62rem;font-weight:400;letter-spacing:.06em;opacity:.75;text-transform:none;margin-top:.15rem}
-
-/* Service panels */
-.services-panel{display:none}
-.services-panel.active{display:block}
 .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border)}
 .services-grid.two-col{grid-template-columns:repeat(2,1fr)}
-
-/* Panel intro blurb */
-.panel-intro{font-size:1.2rem;font-weight:300;color:var(--muted);line-height:1.75;margin-bottom:1.8rem;max-width:1200px;text-align:center;}
 .service-card{background:var(--surface);padding:2.2rem 1.8rem;position:relative;overflow:hidden;transition:background .3s}
+.service-section:nth-child(odd) .service-card{background:var(--bg)}
 .service-card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--blue);width:0;transition:width .4s cubic-bezier(.16,1,.3,1)}
-.service-card:hover{background:var(--bg)}
+.service-card:hover{background:var(--bg-2)!important}
 .service-card:hover::after{width:100%}
 .service-num{font-family:var(--ff-head);font-size:.65rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--muted-2);margin-bottom:1.4rem;display:flex;align-items:center;gap:.6rem}
 .service-num::before{content:'';width:20px;height:1px;background:var(--muted-2)}
@@ -496,7 +485,7 @@ footer{background:#080808;border-top:1px solid rgba(255,255,255,.05);padding:4.5
   .process-steps::before{display:none}
 }
 @media(max-width:1024px){
-  .about-grid,.services-header,.process-header,.expect-grid{grid-template-columns:1fr}
+  .about-grid,.process-header,.expect-grid,.service-section-header{grid-template-columns:1fr}
   .about-visual{display:none}
   .about-screen{top:0;right:0;width:100%;height:100%}
   .sectors-grid{grid-template-columns:1fr 1fr}
@@ -517,7 +506,6 @@ footer{background:#080808;border-top:1px solid rgba(255,255,255,.05);padding:4.5
   .about-pillars,.sectors-grid,.footer-grid,.services-grid,.process-steps{grid-template-columns:1fr}
   .hero-stat{min-width:100%}
   .modal-header,.modal-body{padding-left:1.4rem;padding-right:1.4rem}
-  .svc-tab{padding:.6rem}
 }
 </style>
 </head>
@@ -567,7 +555,8 @@ footer{background:#080808;border-top:1px solid rgba(255,255,255,.05);padding:4.5
             <option>Google Business Profile Management</option>
             <option>Website Management</option>
             <option>Local SEO</option>
-            <option>Not sure — happy to discuss</option>
+            <option>Website Build</option>
+            <option>Not sure, but happy to discuss</option>
           </select>
         </div>
       </div>
@@ -599,7 +588,7 @@ footer{background:#080808;border-top:1px solid rgba(255,255,255,.05);padding:4.5
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
       </div>
       <div class="form-success-title">Request received</div>
-      <p class="form-success-sub">Thanks — we'll be in touch as soon as possible.</p>
+      <p class="form-success-sub">Thanks. We'll be in touch as soon as possible.</p>
     </div>
   </div>
 </div>
@@ -614,12 +603,12 @@ footer{background:#080808;border-top:1px solid rgba(255,255,255,.05);padding:4.5
     <div class="legal-content">
       <p><strong>Last updated: January 2026</strong></p>
       <h2>Who we are</h2>
-      <p>Aveline.Digital ("we", "us", "our") provides local digital marketing services — including Google Business Profile management, website management, and local SEO — to local businesses in the UK. This policy explains what personal data we collect, why we collect it, and your rights under UK GDPR.</p>
+      <p>Aveline.Digital ("we", "us", "our") provides local digital marketing services — including Google Business Profile management, website builds, website management, and local SEO — to local businesses in the UK. This policy explains what personal data we collect, why we collect it, and your rights under UK GDPR.</p>
       <h2>What data we collect</h2>
       <ul>
-        <li><strong>Contact form data</strong> — name, email address, phone number, business name, and any information you voluntarily include in your message.</li>
-        <li><strong>Usage data</strong> — anonymised analytics data (pages visited, time on site, referrer) collected via privacy-respecting tools. No cookies that require consent are set.</li>
-        <li><strong>Client data</strong> — for active clients we may hold business information, login credentials (stored securely), and correspondence necessary to deliver our services.</li>
+        <li><strong>Contact form data</strong>: name, email address, phone number, business name, and any information you voluntarily include in your message.</li>
+        <li><strong>Usage data</strong>: anonymised analytics data (pages visited, time on site, referrer) collected via privacy-respecting tools. No cookies that require consent are set.</li>
+        <li><strong>Client data</strong>: for active clients we may hold business information, login credentials (stored securely), and correspondence necessary to deliver our services.</li>
       </ul>
       <h2>How we use your data</h2>
       <ul>
@@ -719,20 +708,22 @@ footer{background:#080808;border-top:1px solid rgba(255,255,255,.05);padding:4.5
 <div class="mobile-overlay" id="mobileOverlay"></div>
 <div class="mobile-menu" id="mobileMenu">
   <button class="mobile-close" id="mobileClose">✕</button>
-  <a href="#services" onclick="closeMobile()">Services</a>
+  <a href="#gbp" onclick="closeMobile()">GBP Management</a>
+  <a href="#web" onclick="closeMobile()">Website Management</a>
+  <a href="#seo" onclick="closeMobile()">Local SEO</a>
+  <a href="#website-build" onclick="closeMobile()">Website Build</a>
   <a href="#process" onclick="closeMobile()">How It Works</a>
-  <a href="#expect" onclick="closeMobile()">What to Expect</a>
-  <a href="#sectors" onclick="closeMobile()">Sectors</a>
   <a href="#" onclick="closeMobile();openModal('contactModal');return false;">Get in Touch</a>
 </div>
 
 <nav id="navbar">
   <a href="#" class="nav-logo"><svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#1a6dff"><path d="M720 3v-120H600v-121h120v-121h121v121h121v121H841V3H720ZM43.6-103v-242H-2v-136l46-201h649l45 201v82h-58v121H544v-82h-87v257H43.6ZM180-239h141v-106H180v106ZM42-722v-118h653v118H42Z"/></svg><span>Aveline<span class="accent">.Digital</span></span></a>
   <ul class="nav-links">
-    <li><a href="#services">Services</a></li>
+    <li><a href="#gbp">GBP</a></li>
+    <li><a href="#web">Website</a></li>
+    <li><a href="#seo">Local SEO</a></li>
+    <li><a href="#website-build">Website Build</a></li>
     <li><a href="#process">How It Works</a></li>
-    <li><a href="#expect">What to Expect</a></li>
-    <li><a href="#sectors">Who We Help</a></li>
     <li><a href="#" class="nav-cta" onclick="openModal('contactModal');return false;">Get in Touch</a></li>
   </ul>
   <div class="nav-hamburger" id="hamburger">
@@ -758,10 +749,10 @@ footer{background:#080808;border-top:1px solid rgba(255,255,255,.05);padding:4.5
       Own your<br>
       <span class="hl">local presence</span>
     </h1>
-    <p class="hero-sub">We manage your Google Business Profile, website, and local SEO so local customers find you first — and choose you over everyone else.</p>
+    <p class="hero-sub">We manage your Google Business Profile, website, and local SEO, and build websites for businesses that need one. So local customers find you first and choose you over everyone else.</p>
     <div class="hero-actions">
       <button class="btn-primary" onclick="openModal('contactModal')">Get in touch</button>
-      <a href="#services" class="btn-ghost">See our services</a>
+      <a href="#gbp" class="btn-ghost">See our services</a>
     </div>
   </div>
   <div class="hero-stats container">
@@ -791,13 +782,13 @@ footer{background:#080808;border-top:1px solid rgba(255,255,255,.05);padding:4.5
       <div>
         <div class="tag reveal"><span class="blink"></span>Who We Are</div>
         <h2 class="s-title reveal reveal-delay-1">Your local presence<br>is our <span class="b">only focus</span></h2>
-        <p class="about-body reveal reveal-delay-2">Aveline.Digital exists to make sure that when someone nearby searches for what you do, you're the business they find, trust, and call. We manage your Google Business Profile, your website, and your local SEO — so you can focus on running your business.</p>
+        <p class="about-body reveal reveal-delay-2">Aveline.Digital exists to make sure that when someone nearby searches for what you do, you're the business they find, trust, and call. We manage your Google Business Profile, your website, and your local SEO, so you can focus on running your business.</p>
         <p class="about-body reveal reveal-delay-2">No jargon. No fluff. Just straightforward work, clear communication, and a genuine interest in helping your business grow.</p>
         <div class="about-pillars reveal reveal-delay-3">
           <div class="pillar"><div class="pillar-name">Transparent</div><div class="pillar-desc">You always know what we're doing and why.</div></div>
           <div class="pillar"><div class="pillar-name">Dedicated</div><div class="pillar-desc">One point of contact, focused on your growth.</div></div>
           <div class="pillar"><div class="pillar-name">Methodical</div><div class="pillar-desc">Every action is deliberate and documented.</div></div>
-          <div class="pillar"><div class="pillar-name">Local-First</div><div class="pillar-desc">Local is all we do — and we do it well.</div></div>
+          <div class="pillar"><div class="pillar-name">Local-First</div><div class="pillar-desc">Local is all we do, and we do it well.</div></div>
         </div>
       </div>
       <div class="about-visual reveal reveal-delay-2" style="user-select: none;">
@@ -835,193 +826,235 @@ footer{background:#080808;border-top:1px solid rgba(255,255,255,.05);padding:4.5
   </div>
 </section>
 
-<!-- SERVICES -->
-<section class="services" id="services">
+<!-- GBP -->
+<section class="service-section" id="gbp">
   <div class="container">
-    <div class="services-header">
+    <div class="service-section-header">
       <div>
-        <div class="tag reveal"><span class="blink"></span>What We Do</div>
-        <h2 class="s-title reveal reveal-delay-1">Three services.<br><span class="b">One clear focus.</span></h2>
+        <div class="service-section-tag reveal">Google Business Profile Management</div>
+        <h2 class="s-title reveal reveal-delay-1">Your Map listing,<br><span class="b">properly managed.</span></h2>
       </div>
-      <p class="services-intro reveal reveal-delay-2">We offer Google Business Profile management, website management, and local SEO as standalone services or combined. Pick what fits your business.</p>
+      <p class="service-section-intro reveal reveal-delay-2">Your Google Business Profile is often the first thing a local customer sees. We keep it optimised, active, and working hard to rank in the Local Pack and on Maps.</p>
     </div>
-
-    <!-- Tab bar -->
-    <div class="services-tabs reveal">
-      <button class="svc-tab active" onclick="switchTab('gbp')">
-        Google Business Profile
-        <span class="tab-sub">Visibility &amp; presence</span>
-      </button>
-      <button class="svc-tab" onclick="switchTab('web')">
-        Website Management
-        <span class="tab-sub">Performance &amp; upkeep</span>
-      </button>
-      <button class="svc-tab" onclick="switchTab('seo')">
-        Local SEO
-        <span class="tab-sub">Rankings &amp; visibility</span>
-      </button>
-    </div>
-
-    <!-- GBP Panel -->
-    <div class="services-panel active" id="panel-gbp">
-      <p class="panel-intro">Your Google Business Profile is often the first thing a local customer sees. We keep it optimised, active, and working hard to rank in the Local Pack and on Maps.</p>
-      <div class="services-grid">
-
-    <div class="service-card">
-      <div class="service-num">01</div>
-      <div class="service-icon">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+    <div class="services-grid reveal">
+      <div class="service-card">
+        <div class="service-num">01</div>
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        </div>
+        <div class="service-name">Full Profile Management</div>
+        <p class="service-desc">We handle everything your profile needs to perform: from the initial setup to the ongoing work that keeps it accurate, active, and visible in local search.</p>
+        <ul class="service-features">
+          <li>Full setup &amp; optimisation</li>
+          <li>Weekly posts &amp; updates</li>
+          <li>Q&amp;A management</li>
+          <li>Photo strategy &amp; uploads</li>
+        </ul>
       </div>
-      <div class="service-name">Full Profile Management</div>
-      <p class="service-desc">We handle everything your profile needs to perform — from the initial setup to the ongoing work that keeps it accurate, active, and visible in local search.</p>
-      <ul class="service-features">
-        <li>Full setup &amp; optimisation</li>
-        <li>Weekly posts &amp; updates</li>
-        <li>Q&amp;A management</li>
-        <li>Photo strategy &amp; uploads</li>
-      </ul>
-    </div>
-
-    <div class="service-card">
-      <div class="service-num">02</div>
-      <div class="service-icon">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      <div class="service-card">
+        <div class="service-num">02</div>
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <div class="service-name">Review Management</div>
+        <p class="service-desc">Your reviews shape how customers see you. We respond to every review on your behalf, reinforcing the positives and handling the difficult ones with care.</p>
+        <ul class="service-features">
+          <li>Responses to all new reviews</li>
+          <li>Tone matched to your business</li>
+          <li>Sensitive handling of negatives</li>
+          <li>Spam &amp; fake review flagging</li>
+        </ul>
       </div>
-      <div class="service-name">Review Management</div>
-      <p class="service-desc">Your reviews shape how customers see you. We respond to every review on your behalf — reinforcing the positives and handling the difficult ones with care.</p>
-      <ul class="service-features">
-        <li>Responses to all new reviews</li>
-        <li>Tone matched to your business</li>
-        <li>Sensitive handling of negatives</li>
-        <li>Spam &amp; fake review flagging</li>
-      </ul>
-    </div>
-
-    <div class="service-card">
-      <div class="service-num">03</div>
-      <div class="service-icon">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
-      </div>
-      <div class="service-name">Performance Reporting</div>
-      <p class="service-desc">A clear monthly picture of how your profile is performing — what's working, where you're ranking, and what we're doing next. No jargon, no vanity metrics.</p>
-      <ul class="service-features">
-        <li>Rankings &amp; visibility tracking</li>
-        <li>Call &amp; direction click data</li>
-        <li>Alerts for unexpected profile changes</li>
-        <li>Plain-English commentary</li>
-      </ul>
-    </div>
-
-      </div>
-    </div>
-
-    <!-- Website Panel -->
-    <div class="services-panel" id="panel-web">
-      <p class="panel-intro">Whether your site is built on WordPress, Wix, Squarespace, or something else entirely, we handle the ongoing management so it stays accurate and working — within the limits of your platform.</p>
-      <div class="services-grid">
-
-        <div class="service-card">
-          <div class="service-num">01</div>
-          <div class="service-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-          </div>
-          <div class="service-name">Content &amp; Updates</div>
-          <p class="service-desc">Prices changed, new staff, updated hours? We handle content updates quickly so your site always reflects your business accurately — regardless of what platform it's built on.</p>
-          <ul class="service-features">
-            <li>Text &amp; image updates</li>
-            <li>New page or section additions</li>
-            <li>Menu, pricing &amp; hours updates</li>
-            <li>Seasonal content changes</li>
-          </ul>
+      <div class="service-card">
+        <div class="service-num">03</div>
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
         </div>
-
-        <div class="service-card">
-          <div class="service-num">02</div>
-          <div class="service-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
-          </div>
-          <div class="service-name">Performance &amp; Speed</div>
-          <p class="service-desc">If a website isn't loaded within 2 seconds, most visitors will leave. Where your platform allows, we identify and deal with issues to ensure your site remains fast on every device.</p>
-          <ul class="service-features">
-            <li>Page speed audits</li>
-            <li>Image optimisation</li>
-            <li>Core Web Vitals review</li>
-            <li>Mobile responsiveness checks</li>
-          </ul>
-        </div>
-
-        <div class="service-card">
-          <div class="service-num">03</div>
-          <div class="service-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          </div>
-          <div class="service-name">Security &amp; Uptime</div>
-          <p class="service-desc">We monitor your site for downtime and flag issues promptly. For WordPress sites, we also keep plugins and software up to date — hosted platforms like Wix and Squarespace handle this themselves.</p>
-          <ul class="service-features">
-            <li>Uptime monitoring</li>
-            <li>WordPress plugin &amp; CMS updates</li>
-            <li>Security scanning</li>
-            <li>SSL &amp; certificate checks</li>
-          </ul>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- Local SEO Panel -->
-    <div class="services-panel" id="panel-seo">
-      <p class="panel-intro">Ranking well on Google Maps is only part of the picture. Local SEO makes sure your whole online presence — your site, your citations, and your content — is working together to bring in nearby customers.</p>
-      <div class="services-grid">
-
-        <div class="service-card">
-          <div class="service-num">01</div>
-          <div class="service-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-          </div>
-          <div class="service-name">Local Keyword Strategy</div>
-          <p class="service-desc">We identify the search terms your local customers actually use and make sure your site and profile are optimised to show up for them — not just generic industry terms.</p>
-          <ul class="service-features">
-            <li>Local keyword research</li>
-            <li>Competitor gap analysis</li>
-            <li>On-page optimisation recommendations</li>
-            <li>Location-specific content guidance</li>
-          </ul>
-        </div>
-
-        <div class="service-card">
-          <div class="service-num">02</div>
-          <div class="service-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
-          </div>
-          <div class="service-name">Citation Building &amp; Cleanup</div>
-          <p class="service-desc">Consistent business information across the web is a key ranking factor. We audit your listings, fix inconsistencies, and build new citations on trusted directories.</p>
-          <ul class="service-features">
-            <li>NAP consistency audit</li>
-            <li>Directory listing corrections</li>
-            <li>New citation building</li>
-            <li>Ongoing citation monitoring</li>
-          </ul>
-        </div>
-
-        <div class="service-card">
-          <div class="service-num">03</div>
-          <div class="service-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
-          </div>
-          <div class="service-name">Local SEO Reporting</div>
-          <p class="service-desc">A clear monthly view of how you're performing in local organic search: keyword positions, visibility trends, and what we're focusing on next.</p>
-          <ul class="service-features">
-            <li>Local keyword ranking tracking</li>
-            <li>Visibility &amp; traffic trends</li>
-            <li>Citation health overview</li>
-            <li>Plain-English monthly summary</li>
-          </ul>
-        </div>
-
+        <div class="service-name">Performance Reporting</div>
+        <p class="service-desc">A clear monthly picture of how your profile is performing: what's working, where you're ranking, and what we're doing next. No jargon, no vanity metrics.</p>
+        <ul class="service-features">
+          <li>Rankings &amp; visibility tracking</li>
+          <li>Call &amp; direction click data</li>
+          <li>Alerts for unexpected profile changes</li>
+          <li>Plain-English commentary</li>
+        </ul>
       </div>
     </div>
   </div>
 </section>
+
+<!-- WEBSITE BUILD -->
+<section class="service-section" id="website-build">
+  <div class="container">
+    <div class="service-section-header">
+      <div>
+        <div class="service-section-tag reveal">Website Build</div>
+        <h2 class="s-title reveal reveal-delay-1">No website?<br><span class="b">We'll build one.</span></h2>
+      </div>
+      <p class="service-section-intro reveal reveal-delay-2">A website is a trust signal, a ranking factor, and the foundation your GBP listing needs to perform. If you don't have one, or your current one isn't up to the job, we'll build something clean, fast, and purpose-built for local search.</p>
+    </div>
+    <div class="services-grid reveal">
+      <div class="service-card">
+        <div class="service-num">01</div>
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </div>
+        <div class="service-name">Starter Site</div>
+        <p class="service-desc">A clean, professional single-page website covering your services, contact details, and the key information local customers need. Built properly from the start, not a template shortcut.</p>
+        <ul class="service-features">
+          <li>Custom design, built to your brand</li>
+          <li>Fast, mobile-first, and accessible</li>
+          <li>NAP-consistent with your GBP listing</li>
+          <li>Contact form &amp; click-to-call</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <div class="service-num">02</div>
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </div>
+        <div class="service-name">SEO-Ready Foundation</div>
+        <p class="service-desc">Every site we build is structured with local search in mind — service pages, location signals, schema markup, and metadata — so Google can easily index it from day one.</p>
+        <ul class="service-features">
+          <li>LocalBusiness schema markup</li>
+          <li>Location-optimised page titles &amp; meta</li>
+          <li>Service pages structured for rankings</li>
+          <li>Google Search Console setup included</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <div class="service-num">03</div>
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
+        </div>
+        <div class="service-name">Grow When You're Ready</div>
+        <p class="service-desc">Start with a solid foundation and expand it over time. Whether that's additional service pages, a blog, or a more complete multi-page site, we build with growth in mind.</p>
+        <ul class="service-features">
+          <li>Easy to hand off to our management service</li>
+          <li>Expandable to a full multi-page site</li>
+          <li>No lock-in: you own everything</li>
+          <li>One-off fee, quoted per project</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- WEBSITE MANAGEMENT -->
+<section class="service-section" id="web">
+  <div class="container">
+    <div class="service-section-header">
+      <div>
+        <div class="service-section-tag reveal">Website Management</div>
+        <h2 class="s-title reveal reveal-delay-1">Your website,<br><span class="b">kept in order.</span></h2>
+      </div>
+      <p class="service-section-intro reveal reveal-delay-2">Whether your site is built on WordPress, Wix, Squarespace, or something else entirely, we handle the ongoing management so it stays accurate and working within the limits of your platform.</p>
+    </div>
+    <div class="services-grid reveal">
+      <div class="service-card">
+        <div class="service-num">01</div>
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </div>
+        <div class="service-name">Content &amp; Updates</div>
+        <p class="service-desc">Prices changed, new staff, updated hours? We handle content updates quickly so your site always reflects your business accurately, regardless of what platform it's built on.</p>
+        <ul class="service-features">
+          <li>Text &amp; image updates</li>
+          <li>New page or section additions</li>
+          <li>Menu, pricing &amp; hours updates</li>
+          <li>Seasonal content changes</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <div class="service-num">02</div>
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+        </div>
+        <div class="service-name">Performance &amp; Speed</div>
+        <p class="service-desc">If a website isn't loaded within 2 seconds, most visitors will leave. Where your platform allows, we identify and deal with issues to ensure your site remains fast on every device.</p>
+        <ul class="service-features">
+          <li>Page speed audits</li>
+          <li>Image optimisation</li>
+          <li>Core Web Vitals review</li>
+          <li>Mobile responsiveness checks</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <div class="service-num">03</div>
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="service-name">Security &amp; Uptime</div>
+        <p class="service-desc">We monitor your site for downtime and flag issues promptly. For WordPress sites, we also keep plugins up to date (hosted platforms like Wix and Squarespace handle this themselves).</p>
+        <ul class="service-features">
+          <li>Uptime monitoring</li>
+          <li>WordPress plugin &amp; CMS updates</li>
+          <li>Security scanning</li>
+          <li>SSL &amp; certificate checks</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCAL SEO -->
+<section class="service-section" id="seo">
+  <div class="container">
+    <div class="service-section-header">
+      <div>
+        <div class="service-section-tag reveal">Local SEO</div>
+        <h2 class="s-title reveal reveal-delay-1">Rank higher,<br><span class="b">locally.</span></h2>
+      </div>
+      <p class="service-section-intro reveal reveal-delay-2">Ranking well on Google Maps is only part of the picture. Local SEO makes sure your whole online presence — your site, your citations, and your content — is working together to bring in nearby customers.</p>
+    </div>
+    <div class="services-grid reveal">
+      <div class="service-card">
+        <div class="service-num">01</div>
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </div>
+        <div class="service-name">Local Keyword Strategy</div>
+        <p class="service-desc">We identify the search terms your local customers actually use and make sure your site and profile are optimised to show up for them, not just generic industry terms.</p>
+        <ul class="service-features">
+          <li>Local keyword research</li>
+          <li>Competitor gap analysis</li>
+          <li>On-page optimisation recommendations</li>
+          <li>Location-specific content guidance</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <div class="service-num">02</div>
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+        </div>
+        <div class="service-name">Citation Maintenance</div>
+        <p class="service-desc">Consistent business information across the web is a key ranking factor. We audit your listings, fix inconsistencies, and build new citations on trusted directories.</p>
+        <ul class="service-features">
+          <li>NAP consistency audit</li>
+          <li>Directory listing corrections</li>
+          <li>New citation building</li>
+          <li>Ongoing citation monitoring</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <div class="service-num">03</div>
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+        </div>
+        <div class="service-name">Local SEO Reporting</div>
+        <p class="service-desc">A clear monthly view of how you're performing in local organic search: keyword positions, visibility trends, and what we're focusing on next.</p>
+        <ul class="service-features">
+          <li>Local keyword ranking tracking</li>
+          <li>Visibility &amp; traffic trends</li>
+          <li>Citation health overview</li>
+          <li>Plain-English monthly summary</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="process" id="process">
   <div class="container">
     <div class="tag reveal"><span class="blink"></span>How It Works</div>
@@ -1043,12 +1076,12 @@ footer{background:#080808;border-top:1px solid rgba(255,255,255,.05);padding:4.5
       <div class="process-step">
         <div class="step-circle"><div class="step-num">03</div></div>
         <div class="step-title">Onboarding</div>
-        <p class="step-desc">We get the access we need, complete a thorough setup and optimisation for your chosen services, and get everything properly configured — typically within two weeks.</p>
+        <p class="step-desc">We get the access we need, complete a thorough setup and optimisation for your chosen services, and get everything properly configured, typically within two weeks.</p>
       </div>
       <div class="process-step">
         <div class="step-circle"><div class="step-num">04</div></div>
         <div class="step-title">Ongoing Management</div>
-        <p class="step-desc">We manage everything on a rolling monthly basis: posting, monitoring, responding, updating, and optimising — with a clear report sent to you every four weeks.</p>
+        <p class="step-desc">We manage everything on a rolling monthly basis: posting, monitoring, responding, updating, and optimising, with a clear report sent to you every month.</p>
       </div>
     </div>
   </div>
@@ -1064,7 +1097,7 @@ footer{background:#080808;border-top:1px solid rgba(255,255,255,.05);padding:4.5
         <h2 class="s-title reveal reveal-delay-1">Honest work<br><span class="b">No surprises</span></h2>
         <p class="expect-body reveal reveal-delay-2">We're a new business, so we don't have a track record of client results to show you yet. What we can offer is complete transparency, genuine effort, and the kind of straightforward service that larger agencies rarely deliver.</p>
         <ul class="promise-list reveal reveal-delay-3">
-          <li><div class="check">✓</div>No long-term contracts — cancel with 30 days' notice</li>
+          <li><div class="check">✓</div>No long-term contracts: cancel with 30 days' notice</li>
           <li><div class="check">✓</div>Clear monthly reports in plain English</li>
           <li><div class="check">✓</div>One dedicated point of contact throughout</li>
           <li><div class="check">✓</div>Honest advice, even if it's not what you want to hear</li>
@@ -1078,7 +1111,7 @@ footer{background:#080808;border-top:1px solid rgba(255,255,255,.05);padding:4.5
           </div>
           <div>
             <div class="expect-title">It takes time</div>
-            <div class="expect-desc">Local search improvements are gradual. Most clients see meaningful movement within 60–90 days, but we set realistic expectations from the start — not inflated promises.</div>
+            <div class="expect-desc">Local search improvements are gradual. Most clients see meaningful movement within 60-90 days, but we set realistic expectations from the start, not inflated promises.</div>
           </div>
         </div>
         <div class="expect-item">
@@ -1096,7 +1129,7 @@ footer{background:#080808;border-top:1px solid rgba(255,255,255,.05);padding:4.5
           </div>
           <div>
             <div class="expect-title">You'll always know what we're doing</div>
-            <div class="expect-desc">Monthly reports, honest updates, and a direct line to us. No disappearing into a black box — you'll always have full visibility of our work.</div>
+            <div class="expect-desc">Monthly reports, honest updates, and a direct line to us. No disappearing into a black box: you'll always have full visibility of our work.</div>
           </div>
         </div>
         <div class="expect-item">
@@ -1170,22 +1203,22 @@ footer{background:#080808;border-top:1px solid rgba(255,255,255,.05);padding:4.5
 
           <div class="faq-item">
             <button class="faq-q">What kind of businesses do you work with?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
-            <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>We focus on local businesses that rely on customers in their area — trades and contractors, restaurants, professional services, retailers, and similar. If you serve a local customer base and want to be easier to find online, we're likely a good fit.</p></div></div></div>
+            <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>We focus on local businesses that rely on customers in their area: trades and contractors, restaurants, professional services, retailers, and similar. If you serve a local customer base and want to be easier to find online, we're likely a good fit.</p></div></div></div>
           </div>
 
           <div class="faq-item">
-            <button class="faq-q">Do I need to take all three services?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
-            <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>Not at all. Each service — GBP management, website management, and local SEO — is available on its own or in any combination. We'll have an honest conversation about what's likely to make the most difference for your business before recommending anything.</p></div></div></div>
+            <button class="faq-q">Do I need to take all of your services?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
+            <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>Mostly no. GBP management, website builds, and website management can all be taken separately without any need to take anything else. The only exception is local SEO: to ensure I provide the best value for money, it's essential I managed your GBP and website, as both of these are essential.</p></div></div></div>
           </div>
 
           <div class="faq-item">
             <button class="faq-q">What happens if I cancel?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
-            <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>We'll continue delivering your services until the end of your current billing period, then hand everything back cleanly. You keep full access to all your accounts, and we'll provide a final report on where things stand. No hard feelings, no hassle.</p></div></div></div>
+            <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>We'll continue delivering your services until the end of your current billing period, then hand everything back cleanly, and you keep full access to all your accounts. No hard feelings, no hassle.</p></div></div></div>
           </div>
 
           <div class="faq-item">
             <button class="faq-q">What if I need to update my business information?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
-            <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>Just email us. Whether it's opening hours, phone numbers, services, pricing, or anything else — we'll update it across your profile, website, and any directory listings we manage, as soon as we receive your message.</p></div></div></div>
+            <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>Just email us. Whether it's opening hours, phone numbers, services, pricing, or anything else, we'll update it across your profile, website, and any directory listings we manage, as soon as we receive your message.</p></div></div></div>
           </div>
 
         </div>
@@ -1203,7 +1236,7 @@ footer{background:#080808;border-top:1px solid rgba(255,255,255,.05);padding:4.5
 
           <div class="faq-item">
             <button class="faq-q">What if I don't have a Google Business Profile yet?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
-            <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>No problem. We can help you set one up as part of the initial setup process. Most businesses already have one — even if they didn't create it, Google often creates them automatically. If you genuinely don't have one, we'll get you sorted.</p></div></div></div>
+            <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>No problem. We can help you set one up as part of the initial setup process. Most businesses already have one: even if they didn't create it, Google often creates them automatically. If you genuinely don't have one, we'll get you sorted.</p></div></div></div>
           </div>
 
           <div class="faq-item">
@@ -1213,12 +1246,12 @@ footer{background:#080808;border-top:1px solid rgba(255,255,255,.05);padding:4.5
 
           <div class="faq-item">
             <button class="faq-q">How quickly do you respond to reviews?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
-            <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>We monitor profiles daily and respond to all reviews as soon as possible — usually within 72 hours.</p></div></div></div>
+            <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>We monitor profiles daily and respond to all reviews as soon as possible, usually within 72 hours.</p></div></div></div>
           </div>
 
           <div class="faq-item">
             <button class="faq-q">What happens with negative reviews?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
-            <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>We respond professionally to every review, including negative ones. A well-handled negative review can actually build trust with potential customers — it shows you take feedback seriously and care about making things right. We'll craft a response that addresses their concerns while maintaining your professional reputation.</p></div></div></div>
+            <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>We respond professionally to every review, including negative ones. A well-handled negative review can actually build trust with potential customers: it shows you take feedback seriously and care about making things right. We'll craft a response that addresses their concerns while maintaining your professional reputation.</p></div></div></div>
           </div>
 
           <div class="faq-item">
@@ -1233,12 +1266,12 @@ footer{background:#080808;border-top:1px solid rgba(255,255,255,.05);padding:4.5
 
           <div class="faq-item">
             <button class="faq-q">How quickly will I see results?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
-            <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>Your profile will look more complete and professional within the first two weeks. Increased visibility in local search typically builds over 4–8 weeks as Google recognises your active, well-maintained profile. Most clients see steady improvement in views and customer actions within 3–6 months — it's an ongoing process, not a one-time fix.</p></div></div></div>
+            <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>Your profile will look more complete and professional within the first two weeks. Increased visibility in local search typically builds over 4-8 weeks as Google recognises your active, well-maintained profile. Most clients see steady improvement in views and customer actions within 3-6 months, but it's an ongoing process, not a one-time fix.</p></div></div></div>
           </div>
 
           <div class="faq-item">
             <button class="faq-q">Can you guarantee I'll rank #1?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
-            <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>No — and honestly, anyone who promises guaranteed rankings isn't being straight with you. We can't control Google's algorithm or what your competitors do. What we can do is optimise your profile using best practices, keep it active and professional, and give you the best possible chance of showing up when it matters.</p></div></div></div>
+            <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>No, and anyone who promises guaranteed rankings isn't being straight with you. We can't control Google's algorithm or what your competitors do. What we can do is optimise your profile using best practices, keep it active and professional, and give you the best possible chance of showing up when it matters.</p></div></div></div>
           </div>
 
         </div>
@@ -1251,17 +1284,17 @@ footer{background:#080808;border-top:1px solid rgba(255,255,255,.05);padding:4.5
 
           <div class="faq-item">
             <button class="faq-q">What platforms do you support?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
-            <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>We work with most common platforms — WordPress, Wix, Squarespace, and others. What we can do varies slightly by platform: WordPress gives us the most flexibility, while hosted builders like Wix and Squarespace have certain limitations built in. We'll be upfront about what's possible before we start.</p></div></div></div>
+            <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>We work with most common platforms: WordPress, Wix, Squarespace, and others. What we can do varies slightly by platform: WordPress gives us the most flexibility, while hosted builders like Wix and Squarespace have certain limitations built in. We'll be upfront about what's possible before we start.</p></div></div></div>
           </div>
 
           <div class="faq-item">
             <button class="faq-q">Do you build websites from scratch?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
-            <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>Our website service is focused on ongoing management of an existing site — keeping it accurate, fast, secure, and up to date. We don't currently offer full website builds. If you need a new site, we're happy to point you in the right direction and then take over the ongoing management once it's live.</p></div></div></div>
+            <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>Our website service is focused on ongoing management of an existing site: keeping it accurate, fast, secure, and up to date. We don't currently offer full website builds. If you need a new site, we're happy to point you in the right direction and then take over the ongoing management once it's live.</p></div></div></div>
           </div>
 
           <div class="faq-item">
             <button class="faq-q">How do I get changes made to my site?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
-            <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>Just email us with what you need. There's no ticketing system or portal to navigate — a straightforward email is all it takes. We aim to turn around routine content updates within seventy two hours.</p></div></div></div>
+            <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>Just email us with what you need. There's no ticketing system or portal to navigate: a straightforward email is all it takes. We aim to turn around routine content updates within seventy two hours.</p></div></div></div>
           </div>
 
           <div class="faq-item">
@@ -1274,6 +1307,11 @@ footer{background:#080808;border-top:1px solid rgba(255,255,255,.05);padding:4.5
             <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>We monitor your site for downtime and will alert you as soon as we detect an issue. In most cases we can diagnose the cause quickly — whether it's a plugin conflict, a hosting problem, or something else — and advise on the fastest fix. Note that downtime caused by your hosting provider is outside our direct control, but we'll be with you throughout.</p></div></div></div>
           </div>
 
+          <div class="faq-item">
+            <button class="faq-q">If you build me a website, can you also manage it?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
+            <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>Absolutely. In fact, this is the perfect scenario for us, as we'll fully understand the website's code, so there's no awkward transition period. We build websites with optimization in mind, and would continue managing it that way.</p></div></div></div>
+          </div>
+
         </div>
       </div>
 
@@ -1284,12 +1322,12 @@ footer{background:#080808;border-top:1px solid rgba(255,255,255,.05);padding:4.5
 
           <div class="faq-item">
             <button class="faq-q">What's the difference between GBP management and local SEO?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
-            <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>GBP management focuses on your Google Business Profile — the listing that appears in Maps and the Local Pack. Local SEO is broader: it covers your website's organic rankings, how your business is listed across the web (citations), and making sure everything is consistent and optimised to help you show up in local searches. The two services complement each other well, but each delivers value on its own.</p></div></div></div>
+            <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>GBP management focuses on your Google Business Profile, the listing that appears in Maps and the Local Pack. Local SEO is broader: it covers your website's organic rankings, how your business is listed across the web (citations), and making sure everything is consistent and optimised to help you show up in local searches. The two services complement each other well, but each delivers value on its own.</p></div></div></div>
           </div>
 
           <div class="faq-item">
             <button class="faq-q">What are citations and why do they matter?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
-            <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>Citations are mentions of your business name, address, and phone number on other websites — directories like Yell, Yelp, Thomson Local, and dozens of others. When these are consistent and accurate, they act as a trust signal to Google and help strengthen your local rankings. When they're inconsistent — old addresses, wrong phone numbers — they can quietly hold you back.</p></div></div></div>
+            <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>Citations are mentions of your business name, address, and phone number on other websites: directories like Yell, Yelp, Thomson Local, and dozens of others. When these are consistent and accurate, they act as a trust signal to Google and help strengthen your local rankings. When they're inconsistent, such as old addresses or incorrect phone numbers, they can quietly hold you back.</p></div></div></div>
           </div>
 
           <div class="faq-item">
@@ -1299,12 +1337,12 @@ footer{background:#080808;border-top:1px solid rgba(255,255,255,.05);padding:4.5
 
           <div class="faq-item">
             <button class="faq-q">Do you make changes directly to my website as part of local SEO?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
-            <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>Yes — because we only offer local SEO as part of our full package, we'll already have access to your website through our website management service. Any on-page SEO work gets implemented directly, so you don't have to action anything yourself or involve a separate developer.</p></div></div></div>
+            <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>Yes. Because we only offer local SEO as part of our full package, we'll already have access to your website through our website management service. Any on-page SEO work gets implemented directly, so you don't have to action anything yourself or involve a separate developer.</p></div></div></div>
           </div>
 
           <div class="faq-item">
             <button class="faq-q">Can I sign-up to the Local SEO service only?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
-            <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>No — we only offer local SEO as part of our full package, alongside GBP management and website management. The reason is straightforward: local SEO results depend heavily on the health of your Google Business Profile and your website. If those aren't being actively managed, the external work we do on citations, schema markup, and backlinks will only go so far. Keeping all three under one roof means everything works together and you get the best possible results.</p></div></div></div>
+            <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>No. We only offer local SEO as part of our full package, alongside GBP management and website management. The reason is straightforward: local SEO results depend heavily on the health of your Google Business Profile and your website. If those aren't being actively managed, the external work we do on citations, schema markup, and backlinks will only go so far. Keeping all three under one roof means everything works together and you get the best possible results.</p></div></div></div>
           </div>
 
         </div>
@@ -1322,7 +1360,7 @@ footer{background:#080808;border-top:1px solid rgba(255,255,255,.05);padding:4.5
 
           <div class="faq-item">
             <button class="faq-q">What's included in the free audit?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
-            <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>If you're interested in GBP management, we'll review your current Google Business Profile, identify the most obvious gaps and opportunities, and give you a plain-English summary of what we find — no jargon, no hard sell. It's genuinely free and there's no obligation to work with us afterwards.</p></div></div></div>
+            <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>If you're interested in GBP management, we'll review your current Google Business Profile, identify the most obvious gaps and opportunities, and give you a plain-English summary of what we find: no jargon or hard sell. It's genuinely free and there's no obligation to work with us afterwards.</p></div></div></div>
           </div>
 
           <div class="faq-item">
@@ -1342,7 +1380,7 @@ footer{background:#080808;border-top:1px solid rgba(255,255,255,.05);padding:4.5
 
           <div class="faq-item">
             <button class="faq-q">What's your refund policy?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
-            <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>All fees are non-refundable once paid. Monthly fees are charged in advance for the upcoming month of service, and setup fees cover work that begins immediately. That said, if you're genuinely unhappy, let us know — if we can't resolve it, you can cancel at any time.</p></div></div></div>
+            <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>All fees are non-refundable once paid. Monthly fees are charged in advance for the upcoming month of service, and setup fees cover work that begins immediately. That said, if you're genuinely unhappy, let us know: if we can't resolve it, you can cancel at any time.</p></div></div></div>
           </div>
 
           <div class="faq-item">
@@ -1377,7 +1415,7 @@ footer{background:#080808;border-top:1px solid rgba(255,255,255,.05);padding:4.5
     <div class="cta-inner">
       <div class="tag reveal"><span class="blink"></span>Get Started</div>
       <h2 class="cta-title reveal reveal-delay-1">Ready to be found<br>by <span class="b">more</span> local <span class="b">customers?</span></h2>
-      <p class="cta-sub reveal reveal-delay-2">Get in touch and tell us about your business. We'll come back to you as soon as possible — and if you're interested in GBP management, we'll include a free, no-obligation audit of your profile.</p>
+      <p class="cta-sub reveal reveal-delay-2">Get in touch and tell us about your business. We'll come back to you as soon as possible, and if you're interested in GBP management, we'll include a free, no-obligation audit of your profile.</p>
       <div class="cta-actions reveal reveal-delay-3">
         <button class="btn-primary" onclick="openModal('contactModal')">Get in touch</button>
       </div>
@@ -1401,17 +1439,19 @@ footer{background:#080808;border-top:1px solid rgba(255,255,255,.05);padding:4.5
       <div>
         <div class="footer-col-title">Services</div>
         <ul class="footer-links">
-          <li><a href="#services">GBP Management</a></li>
-          <li><a href="#services">Website Management</a></li>
-          <li><a href="#services">Local SEO</a></li>
+          <li><a href="#gbp">GBP Management</a></li>
+          <li><a href="#web">Website Management</a></li>
+          <li><a href="#seo">Local SEO</a></li>
+          <li><a href="#website-build">Website Build</a></li>
         </ul>
       </div>
       <div>
         <div class="footer-col-title">Company</div>
         <ul class="footer-links">
           <li><a href="#about">About Us</a></li>
+          <li><a href="#process">How It Works</a></li>
           <li><a href="#expect">What to Expect</a></li>
-          <li><a href="#sectors">Sectors</a></li>
+          <li><a href="#sectors">Who We Help</a></li>
           <li><a href="#" onclick="openModal('contactModal');return false;">Contact</a></li>
         </ul>
       </div>
@@ -1540,14 +1580,6 @@ function submitContactForm(){
   // In production: replace this block with a real form submission (fetch/POST)
   document.getElementById('contactForm').style.display='none';
   document.getElementById('contactSuccess').style.display='block';
-}
-
-/* ── SERVICE TABS ────────────────────────────────────── */
-function switchTab(id){
-  document.querySelectorAll('.svc-tab').forEach(t=>t.classList.remove('active'));
-  document.querySelectorAll('.services-panel').forEach(p=>p.classList.remove('active'));
-  document.querySelector(`[onclick="switchTab('${id}')"]`).classList.add('active');
-  document.getElementById('panel-'+id).classList.add('active');
 }
 
 /* ── SCROLL REVEAL ───────────────────────────────────── */
