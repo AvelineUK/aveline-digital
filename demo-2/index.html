@@ -1,0 +1,1761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="favicon.png">
+    <link rel="preload" href="cormorant-garamond-v21-latin-500italic.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="inter-v20-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="inter-v20-latin-500.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="inter-v20-latin-600.woff2" as="font" type="font/woff2" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300&display=swap" rel="stylesheet">
+    <title>Meridian Wealth | Independent Financial Advisors</title>
+</head>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Cormorant Garamond';
+    font-style: italic;
+    font-weight: 500;
+    src: url('cormorant-garamond-v21-latin-500italic.woff2') format('woff2');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    src: url('inter-v20-latin-500.woff2') format('woff2');
+}
+
+:root {
+    --primary-gold: #b8935f;
+    --dark-gold: #8b6f47;
+    --charcoal: #1a1a1a;
+    --soft-white: #fafafa;
+    --warm-cream: #f9f7f4;
+}
+
+body {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    overflow-x: hidden;
+    color: var(--charcoal);
+    background: var(--soft-white);
+    position: relative;
+}
+
+.grain-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+.parallax-bg {
+    position: fixed;
+    top: 10%;
+    right: -45%;
+    width: 200%;
+    height: 200%;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.2;
+    background-image: url("data:image/svg+xml,%3Csvg width='800' height='1200' viewBox='0 0 800 1200' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg transform='rotate(25 400 600)'%3E%3Cg transform='translate(350, 100)'%3E%3Cpolygon points='0,0 80,0 100,20 20,20' fill='%23b8935f'/%3E%3Cpolygon points='80,0 100,20 100,100 80,80' fill='%238b6f47' opacity='0.7'/%3E%3Cpolygon points='0,0 20,20 20,100 0,80' fill='%23a0865a' opacity='0.5'/%3E%3C/g%3E%3Cg transform='translate(270, 220)'%3E%3Cpolygon points='0,0 80,0 100,20 20,20' fill='%23b8935f'/%3E%3Cpolygon points='80,0 100,20 100,100 80,80' fill='%238b6f47' opacity='0.7'/%3E%3Cpolygon points='0,0 20,20 20,100 0,80' fill='%23a0865a' opacity='0.5'/%3E%3C/g%3E%3Cg transform='translate(430, 220)'%3E%3Cpolygon points='0,0 80,0 100,20 20,20' fill='%238b6f47'/%3E%3Cpolygon points='80,0 100,20 100,100 80,80' fill='%23b8935f' opacity='0.7'/%3E%3Cpolygon points='0,0 20,20 20,100 0,80' fill='%23a0865a' opacity='0.5'/%3E%3C/g%3E%3Cg transform='translate(190, 340)'%3E%3Cpolygon points='0,0 80,0 100,20 20,20' fill='%23b8935f'/%3E%3Cpolygon points='80,0 100,20 100,100 80,80' fill='%238b6f47' opacity='0.7'/%3E%3Cpolygon points='0,0 20,20 20,100 0,80' fill='%23a0865a' opacity='0.5'/%3E%3C/g%3E%3Cg transform='translate(350, 340)'%3E%3Cpolygon points='0,0 80,0 100,20 20,20' fill='%238b6f47'/%3E%3Cpolygon points='80,0 100,20 100,100 80,80' fill='%23b8935f' opacity='0.7'/%3E%3Cpolygon points='0,0 20,20 20,100 0,80' fill='%23a0865a' opacity='0.5'/%3E%3C/g%3E%3Cg transform='translate(510, 340)'%3E%3Cpolygon points='0,0 80,0 100,20 20,20' fill='%23b8935f'/%3E%3Cpolygon points='80,0 100,20 100,100 80,80' fill='%238b6f47' opacity='0.7'/%3E%3Cpolygon points='0,0 20,20 20,100 0,80' fill='%23a0865a' opacity='0.5'/%3E%3C/g%3E%3Cg transform='translate(110, 460)'%3E%3Cpolygon points='0,0 80,0 100,20 20,20' fill='%238b6f47'/%3E%3Cpolygon points='80,0 100,20 100,100 80,80' fill='%23b8935f' opacity='0.7'/%3E%3Cpolygon points='0,0 20,20 20,100 0,80' fill='%23a0865a' opacity='0.5'/%3E%3C/g%3E%3Cg transform='translate(270, 460)'%3E%3Cpolygon points='0,0 80,0 100,20 20,20' fill='%23b8935f'/%3E%3Cpolygon points='80,0 100,20 100,100 80,80' fill='%238b6f47' opacity='0.7'/%3E%3Cpolygon points='0,0 20,20 20,100 0,80' fill='%23a0865a' opacity='0.5'/%3E%3C/g%3E%3Cg transform='translate(430, 460)'%3E%3Cpolygon points='0,0 80,0 100,20 20,20' fill='%238b6f47'/%3E%3Cpolygon points='80,0 100,20 100,100 80,80' fill='%23b8935f' opacity='0.7'/%3E%3Cpolygon points='0,0 20,20 20,100 0,80' fill='%23a0865a' opacity='0.5'/%3E%3C/g%3E%3Cg transform='translate(590, 460)'%3E%3Cpolygon points='0,0 80,0 100,20 20,20' fill='%23b8935f'/%3E%3Cpolygon points='80,0 100,20 100,100 80,80' fill='%238b6f47' opacity='0.7'/%3E%3Cpolygon points='0,0 20,20 20,100 0,80' fill='%23a0865a' opacity='0.5'/%3E%3C/g%3E%3Cg transform='translate(30, 580)'%3E%3Cpolygon points='0,0 80,0 100,20 20,20' fill='%23b8935f'/%3E%3Cpolygon points='80,0 100,20 100,100 80,80' fill='%238b6f47' opacity='0.7'/%3E%3Cpolygon points='0,0 20,20 20,100 0,80' fill='%23a0865a' opacity='0.5'/%3E%3C/g%3E%3Cg transform='translate(190, 580)'%3E%3Cpolygon points='0,0 80,0 100,20 20,20' fill='%238b6f47'/%3E%3Cpolygon points='80,0 100,20 100,100 80,80' fill='%23b8935f' opacity='0.7'/%3E%3Cpolygon points='0,0 20,20 20,100 0,80' fill='%23a0865a' opacity='0.5'/%3E%3C/g%3E%3Cg transform='translate(350, 580)'%3E%3Cpolygon points='0,0 80,0 100,20 20,20' fill='%23b8935f'/%3E%3Cpolygon points='80,0 100,20 100,100 80,80' fill='%238b6f47' opacity='0.7'/%3E%3Cpolygon points='0,0 20,20 20,100 0,80' fill='%23a0865a' opacity='0.5'/%3E%3C/g%3E%3Cg transform='translate(510, 580)'%3E%3Cpolygon points='0,0 80,0 100,20 20,20' fill='%238b6f47'/%3E%3Cpolygon points='80,0 100,20 100,100 80,80' fill='%23b8935f' opacity='0.7'/%3E%3Cpolygon points='0,0 20,20 20,100 0,80' fill='%23a0865a' opacity='0.5'/%3E%3C/g%3E%3Cg transform='translate(670, 580)'%3E%3Cpolygon points='0,0 80,0 100,20 20,20' fill='%23b8935f'/%3E%3Cpolygon points='80,0 100,20 100,100 80,80' fill='%238b6f47' opacity='0.7'/%3E%3Cpolygon points='0,0 20,20 20,100 0,80' fill='%23a0865a' opacity='0.5'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    will-change: transform;
+    transition: transform 0.1s ease-out;
+}
+
+/* Header & Navigation */
+
+header {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(184, 147, 95, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+    padding: 2rem 0;
+    transition: all 0.3s ease;
+}
+
+header:hover {
+    box-shadow: 0 4px 30px rgba(0,0,0,0.06);
+}
+
+.header-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 3rem;
+}
+
+.logo-text {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: var(--charcoal);
+    letter-spacing: 3px;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    user-select: none;
+    position: relative;
+    background: linear-gradient(135deg, var(--charcoal) 0%, var(--dark-gold) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.logo-text a {
+    text-decoration: none;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+nav a {
+    color: #4a4a4a;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    position: relative;
+    user-select: none;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0);
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--primary-gold), transparent);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+nav a:hover::after {
+    transform: translateX(-50%) scaleX(1);
+}
+
+nav a:hover {
+    color: var(--charcoal);
+    transform: translateY(-2px);
+}
+
+nav a.active {
+    color: var(--charcoal);
+    font-weight: 600;
+}
+
+nav a.active::after {
+    transform: translateX(-50%) scaleX(1);
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    width: 28px;
+    height: 2px;
+    background: var(--charcoal);
+    transition: 0.3s;
+}
+
+/* Content Wrapper */
+
+#content-wrapper {
+    position: relative;
+    width: 100%;
+    min-height: calc(100vh - 100px);
+    overflow: hidden;
+}
+
+.page-content {
+    position: absolute;
+    width: 100%;
+    min-height: 100%;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease;
+    top: 0;
+    left: 0;
+    display: none;
+    will-change: transform, opacity;
+}
+
+.page-content.slide-out-left {
+    transform: translateX(-100%);
+    opacity: 0;
+    display: block;
+}
+
+.page-content.slide-out-right {
+    transform: translateX(100%);
+    opacity: 0;
+    display: block;
+}
+
+.page-content.slide-in-left {
+    transform: translateX(-100%);
+    opacity: 0;
+    display: block;
+}
+
+.page-content.slide-in-right {
+    transform: translateX(100%);
+    opacity: 0;
+    display: block;
+}
+
+.page-content.active {
+    transform: translateX(0);
+    opacity: 1;
+    position: relative;
+    display: block;
+}
+
+/* Decorative Elements */
+
+.decorative-line {
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-gold) 0%, transparent 100%);
+    margin-bottom: 2.5rem;
+    position: relative;
+}
+
+/* Hero Section */
+
+.hero {
+    background: linear-gradient(135deg, #f5eadb 00%, #ffffff 50%, #f5eadb 100%);
+    padding: 10rem 0 8rem;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -30%;
+    right: -15%;
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(184, 147, 95, 0.08) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: float 20s ease-in-out infinite;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: -20%;
+    left: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(139, 111, 71, 0.05) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: float 25s ease-in-out infinite reverse;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 3rem;
+    animation: fadeInUp 1s ease 0.3s both;
+}
+
+.hero h1 {
+    font-size: 4.5rem;
+    margin-bottom: 2.5rem;
+    font-weight: 500;
+    line-height: 1.15;
+    color: var(--charcoal);
+    max-width: 900px;
+    letter-spacing: -1px;
+}
+
+.hero p {
+    font-size: 1.4rem;
+    max-width: 700px;
+    margin-bottom: 3.5rem;
+    color: #4a4a4a;
+    line-height: 1.9;
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    animation: fadeInUp 1s ease 0.5s both;
+}
+
+.cta-button {
+    display: inline-block;
+    background: var(--charcoal);
+    color: white;
+    padding: 1.3rem 3.5rem;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    animation: fadeInUp 1s ease 0.7s both;
+    text-align: center;
+}
+
+.cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--primary-gold), var(--dark-gold));
+    transition: left 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: -1;
+}
+
+.cta-button:hover::before {
+    left: 0;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.cta-button:active {
+    transform: translateY(-1px);
+}
+
+/* Content Section */
+
+.content-section {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem 3rem;
+}
+
+.section-title {
+    font-size: 3.5rem;
+    color: var(--charcoal);
+    margin-bottom: 1.8rem;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: -1px;
+}
+
+.section-subtitle {
+    font-size: 1.3rem;
+    color: #6a6a6a;
+    margin-bottom: 4.5rem;
+    line-height: 1.8;
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    max-width: 850px;
+}
+
+/* Stats Section */
+
+.stats-banner {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
+    color: white;
+    padding: 0rem 3rem;
+    margin: 5rem 0;
+    position: relative;
+    overflow: hidden;
+    margin-top: 0rem;
+    height: 100%;
+}
+
+.stats-banner::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(184, 147, 95, 0.15) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: pulse 15s ease-in-out infinite;
+}
+
+.stats-banner::after {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    left: -15%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(184, 147, 95, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: pulse 20s ease-in-out infinite reverse;
+}
+
+.stats-grid {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    position: relative;
+    z-index: 1;
+    align-items: stretch;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 4rem 0;
+    border-right: 1px solid rgba(255,255,255,0.1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.stat-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(360deg, rgba(184, 147, 95, 0.25), transparent);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.stat-item:hover::before {
+    opacity: 1;
+}
+
+.stat-item:last-child {
+    border-right: none;
+}
+
+.stat-number {
+    font-size: 4rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    color: var(--primary-gold);
+    font-family: 'Cormorant Garamond', serif;
+    line-height: 1;
+    transition: all 0.4s ease;
+}
+
+.stat-item:hover .stat-number {
+    color: #d4a76a;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    opacity: 0.9;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+/* Value Propositions */
+
+.value-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4rem;
+    margin-top: 4rem;
+}
+
+.value-item {
+    text-align: left;
+    padding: 3rem 2.5rem;
+    background: linear-gradient(135deg, #ffffff 0%, var(--warm-cream) 100%);
+    border-top: 4px solid var(--primary-gold);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+}
+
+.value-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(184, 147, 95, 0.03), transparent);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.value-item:hover::before {
+    opacity: 1;
+}
+
+.value-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+    border-top-color: var(--dark-gold);
+}
+
+.value-number {
+    font-size: 3.5rem;
+    color: rgba(184, 147, 95, 0.15);
+    margin-bottom: 1.5rem;
+    font-style: italic;
+    font-weight: 500;
+    line-height: 1;
+    transition: all 0.5s ease;
+}
+
+.value-item:hover .value-number {
+    color: rgba(184, 147, 95, 0.5);
+}
+
+.value-item h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1.25rem;
+    font-weight: 600;
+    color: var(--charcoal);
+    font-family: 'Cormorant Garamond', serif;
+    letter-spacing: 0.5px;
+}
+
+.value-item p {
+    color: #6a6a6a;
+    line-height: 1.9;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 300;
+}
+
+/* Quote Section */
+
+.quote-section {
+    background: linear-gradient(135deg, #f9f7f4 0%, #ffffff 50%, #f9f7f4 100%);
+    padding: 4rem 3rem;
+    margin: 2rem 0 5rem 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+}
+
+.quote-section::before {
+    content: '"';
+    position: absolute;
+    top: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 25rem;
+    color: rgba(184, 147, 95, 0.04);
+    font-family: 'Cormorant Garamond', serif;
+    line-height: 1;
+    font-weight: 600;
+}
+
+.quote-section blockquote {
+    max-width: 950px;
+    margin: 0 auto;
+    font-size: 2rem;
+    line-height: 1.65;
+    color: var(--charcoal);
+    font-style: italic;
+    position: relative;
+    z-index: 1;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+}
+
+.quote-author {
+    font-size: 0.85rem;
+    color: #6a6a6a;
+    font-style: normal;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.quote-author-line {
+    content: '';
+    display: inline-block;
+    width: 40px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--primary-gold), transparent);
+    vertical-align: middle;
+    margin: 2rem 0;
+}
+
+/* Accent Section */
+
+.accent-section {
+    background: linear-gradient(135deg, var(--dark-gold) 0%, var(--primary-gold) 100%);
+    color: white;
+    padding: 6rem 3rem;
+    margin: 8rem 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+}
+
+.accent-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: float 20s ease-in-out infinite;
+}
+
+.accent-section h2 {
+    font-size: 2.8rem;
+    margin-bottom: 1.8rem;
+    font-weight: 500;
+    letter-spacing: -0.5px;
+}
+
+.accent-section p {
+    font-size: 1.25rem;
+    margin-bottom: 2.5rem;
+    opacity: 0.95;
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.8;
+}
+
+.accent-section .cta-button {
+    background: white;
+    color: var(--charcoal);
+    border-color: white;
+}
+
+.accent-section .cta-button::before {
+    background: var(--charcoal);
+}
+
+.accent-section .cta-button:hover {
+    color: white;
+    border-color: var(--charcoal);
+}
+
+/* Two Column Layout */
+
+.two-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    margin: 4rem 0rem 0rem 0rem;
+}
+
+.column-text h3 {
+    font-size: 2rem;
+    margin-bottom: 1.8rem;
+    font-weight: 500;
+    color: var(--charcoal);
+    letter-spacing: -0.5px;
+}
+
+.column-text p {
+    color: #4a4a4a;
+    line-height: 2;
+    margin-bottom: 1.8rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+}
+
+/* Service List */
+
+.service-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3.5rem;
+    margin-top: 3.5rem;
+}
+
+.service-item {
+    border-left: 3px solid var(--primary-gold);
+    padding-left: 2.5rem;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    background: white;
+    padding: 2rem 2.5rem;
+    margin-left: -2rem;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+}
+
+.service-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 3px;
+    height: 0;
+    background: var(--dark-gold);
+    transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.service-item:hover::before {
+    height: 100%;
+}
+
+.service-item:hover {
+    transform: translateX(10px);
+    border-left-color: var(--dark-gold);
+    box-shadow: 0 6px 25px rgba(0,0,0,0.1);
+}
+
+.service-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.2rem;
+    font-weight: 600;
+    color: var(--charcoal);
+    font-family: 'Cormorant Garamond', serif;
+    transition: color 0.3s ease;
+}
+
+.service-item:hover h3 {
+    color: var(--dark-gold);
+}
+
+.service-item p {
+    color: #6a6a6a;
+    line-height: 1.9;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 300;
+}
+
+/* Contact Form */
+
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    margin-top: 3rem;
+}
+
+.contact-details {
+    padding-top: 2rem;
+}
+
+.contact-details h3 {
+    font-size: 1.8rem;
+    margin-bottom: 2.5rem;
+    font-weight: 500;
+    color: var(--charcoal);
+    letter-spacing: -0.3px;
+}
+
+.detail-item {
+    margin-bottom: 2.5rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid rgba(184, 147, 95, 0.2);
+    transition: all 0.3s ease;
+}
+
+.detail-item:hover {
+    transform: translateX(5px);
+    border-bottom-color: var(--primary-gold);
+}
+
+.detail-label {
+    font-size: 0.75rem;
+    color: var(--primary-gold);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 0.75rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+}
+
+.detail-value {
+    font-size: 1.15rem;
+    color: var(--charcoal);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.8;
+    font-weight: 300;
+}
+
+.detail-value a {
+    text-decoration: none;
+    color: var(--charcoal);
+}
+
+.contact-form {
+    background: linear-gradient(135deg, #f9f7f4 0%, #fafafa 100%);
+    padding: 4rem;
+    border-top: 4px solid var(--primary-gold);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+    transition: all 0.4s ease;
+}
+
+.contact-form:hover {
+    box-shadow: 0 15px 60px rgba(0,0,0,0.08);
+}
+
+.form-group {
+    margin-bottom: 2.5rem;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.75rem;
+    color: #6a6a6a;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 0.75rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 1.2rem;
+    border: 2px solid #e5e5e5;
+    background: white;
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-gold);
+    box-shadow: 0 0 0 4px rgba(184, 147, 95, 0.1);
+    transform: translateY(-2px);
+}
+
+.form-group textarea {
+    min-height: 200px;
+    resize: vertical;
+}
+
+.submit-button {
+    background: var(--charcoal);
+    color: white;
+    padding: 1.3rem 3.5rem;
+    border: none;
+    font-size: 0.85rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.submit-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--primary-gold), var(--dark-gold));
+    transition: left 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: -1;
+}
+
+.submit-button:hover::before {
+    left: 0;
+}
+
+.submit-button:hover {
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* Footer */
+
+footer {
+    background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+    color: white;
+    padding: 5rem 3rem 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--primary-gold), transparent);
+}
+
+.footer-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 5rem;
+    margin-bottom: 4rem;
+}
+
+.footer-section h4 {
+    margin-bottom: 2rem;
+    font-size: 0.8rem;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--primary-gold);
+}
+
+.footer-section p {
+    opacity: 0.75;
+    line-height: 2;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 300;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 1rem;
+}
+
+.footer-section a {
+    color: white;
+    text-decoration: none;
+    opacity: 0.7;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 300;
+    position: relative;
+    display: inline-block;
+}
+
+.footer-section a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--primary-gold);
+    transition: width 0.3s ease;
+}
+
+.footer-section a:hover::after {
+    width: 100%;
+}
+
+.footer-section a:hover {
+    opacity: 1;
+    color: var(--primary-gold);
+    transform: translateX(5px);
+}
+
+.footer-bottom {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-top: 3rem;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    text-align: center;
+    opacity: 0.5;
+    font-size: 0.85rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+}
+
+.footer-bottom p {
+    line-height: 1.8;
+}
+
+.footer-bottom a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.footer-bottom a:hover {
+    color: var(--primary-gold);
+}
+
+/* Toast Notification */
+
+.toast {
+    position: fixed;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translate(-50%, 150%);
+    background: linear-gradient(135deg, var(--dark-gold), var(--primary-gold));
+    color: white;
+    padding: 1.5rem 3rem;
+    border-radius: 8px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+    z-index: 10000;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.toast.show {
+    transform: translate(-50%, 0); 
+    opacity: 1;
+}
+
+.toast::before {
+    content: '✓';
+    width: 24px;
+    height: 24px;
+    background: white;
+    color: var(--dark-gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+/* Keyframes */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+    }
+    50% {
+        transform: translate(-50px, -50px) scale(1.1);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0.8;
+    }
+}
+
+/* Firefox exceptions */
+
+@-moz-document url-prefix() {
+    .value-item:hover {
+        transform: none;
+    }
+
+    .stat-item:hover {
+        transform: none !important;
+    }
+
+    .detail-item:hover {
+        transform: none !important;
+    }
+}
+
+/* Responsive Design */
+
+@media (max-width: 1024px) {
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .two-column,
+    .contact-container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .service-list {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .value-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .stats-banner {
+        padding: 0rem;
+        box-shadow: 0 6px 25px rgba(0,0,0,0.15);
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0rem;
+    }
+
+    .stat-item {
+        border-right: none;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+        padding: 2rem 0rem;
+    }
+
+    .stat-item:last-child {
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .accent-section {
+        margin: 4rem 0;
+    }
+
+    .toast {
+        width: 90%;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        border-bottom: 1px solid #e5e5e5;
+        max-height: 0;
+        opacity: 0;
+        visibility: hidden;
+        transition: max-height 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+        overflow: hidden;
+    }
+
+    nav.active {
+        max-height: 400px;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 0;
+        padding: 1rem 0 0rem 0rem;
+    }
+
+    nav a {
+        display: block;
+        padding: 1rem 3rem;
+        transition: background-color 0.3s ease;
+    }
+
+    nav a::after {
+        display: none;
+    }
+
+    nav a:hover {
+        transform: none;
+        background-color: rgba(184, 147, 95, 0.08);
+    }
+
+    header {
+        padding: 1.75rem 0;
+    }
+
+    .header-container {
+        padding: 0 1.5rem; 
+    }
+
+    .hero,
+    .content-section {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+
+    .hero {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+
+    .hero-content {
+        padding: 0 1.5rem;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .cta-button {
+        padding: 1rem 1rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 0rem;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .contact-form {
+        padding: 2rem;
+    }
+
+    .submit-button {
+        padding: 1.3rem 1.5rem;
+    }
+
+    .quote-section {
+        padding: 0 3rem;
+    }
+
+    .quote-section blockquote {
+        font-size: 1.4rem;
+    }
+
+    .accent-section h2 {
+        font-size: 2rem;
+    }
+}
+
+</style>
+
+<body>
+    <div class="grain-overlay"></div>
+    <div class="parallax-bg"></div>
+    <script>
+        window.scrollTo(0, 0);
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+    </script>
+    <header>
+        <div class="header-container">
+            <span class="logo-text"><a href="index.html">Meridian Wealth</a></span>
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div id="content-wrapper">
+        <!-- Home Page -->
+        <div id="home" class="page-content active">
+            <div class="hero">
+                <div class="hero-content">
+                    <div class="decorative-line"></div>
+                    <h1>Financial planning built on trust, transparency, and expertise.</h1>
+                    <p>For over two decades, we've helped individuals and families navigate complex financial decisions with confidence. Our independent approach means your interests always come first.</p>
+                    <a href="#contact" class="cta-button">Arrange a Consultation</a>
+                </div>
+            </div>
+
+            <div class="stats-banner">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">23</div>
+                        <div class="stat-label">Years Established</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">£1.8bn</div>
+                        <div class="stat-label">Assets Managed</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">950+</div>
+                        <div class="stat-label">Client Families</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">97%</div>
+                        <div class="stat-label">Retention Rate</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <div class="decorative-line"></div>
+                <h2 class="section-title">Why work with Meridian?</h2>
+                <div class="value-grid">
+                    <div class="value-item">
+                        <div class="value-number">01</div>
+                        <h3>Independent Expertise</h3>
+                        <p>As an independent firm, we're not tied to any financial institutions. This means we can recommend solutions from the entire market, ensuring you receive genuinely impartial advice tailored to your circumstances.</p>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-number">02</div>
+                        <h3>Long-Term Partnerships</h3>
+                        <p>We don't believe in transactional relationships. Our approach is to build lasting partnerships with clients, understanding not just your financial situation but your life goals, values, and aspirations.</p>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-number">03</div>
+                        <h3>Holistic Planning</h3>
+                        <p>Wealth management isn't just about investments. We consider tax efficiency, estate planning, protection needs, and retirement strategies to create comprehensive financial plans that work together seamlessly.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quote-section">
+                <blockquote>"The best financial plan is one that adapts to life's changes while staying true to your fundamental goals."</blockquote>
+                <div class="quote-author-line"></div>
+                <div class="quote-author">Richard Carmichael, Founding Partner</div>
+            </div>
+
+            <div class="accent-section">
+                <h2>Ready to take control of your financial future?</h2>
+                <p>Book a complimentary consultation to discover how our independent approach can help you achieve your goals.</p>
+                <a href="#contact" class="cta-button">Get Started</a>
+            </div>
+        </div>
+
+        <!-- Services Page -->
+        <div id="services" class="page-content">
+            <div class="content-section">
+                <div class="decorative-line"></div>
+                <h1 class="section-title">How we can help</h1>
+                <p class="section-subtitle">Our services are designed to address every aspect of your financial life, from building wealth to protecting what matters most.</p>
+
+                <div class="service-list">
+                    <div class="service-item">
+                        <h3>Investment Management</h3>
+                        <p>Bespoke portfolio construction and ongoing management aligned with your risk tolerance and objectives. We employ a disciplined, research-driven approach that looks beyond short-term market noise.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>Retirement Planning</h3>
+                        <p>Comprehensive pension reviews, contribution strategies, and drawdown planning to help you achieve the retirement lifestyle you envision. We navigate complex regulations to optimize your outcomes.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>Tax Planning</h3>
+                        <p>Proactive strategies to minimize your tax burden while remaining fully compliant. From capital gains planning to inheritance tax mitigation, we help you keep more of what you've earned.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>Estate Planning</h3>
+                        <p>Thoughtful structuring of your estate to ensure your wealth passes to future generations efficiently and according to your wishes. We coordinate with legal professionals to implement robust solutions.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>Protection Planning</h3>
+                        <p>Safeguarding you and your family against unforeseen circumstances through appropriate life assurance, critical illness cover, and income protection policies.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>Business Owner Advisory</h3>
+                        <p>Specialized guidance for entrepreneurs and business owners, including exit planning, shareholder protection, and remuneration strategies that balance personal and business needs.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quote-section" style="margin-bottom: 16px; margin-top: 16px">
+                <blockquote>"Investment success is not about timing the market—it's about time in the market with the right strategy."</blockquote>
+                <div class="quote-author-line"></div>
+                <div class="quote-author">Elizabeth Thornton, Managing Partner</div>
+            </div>
+
+            <div class="content-section" style="margin-top: 0px; padding-top: 0px;">
+                <div class="two-column">
+                    <div class="column-text">
+                        <h3>Our investment philosophy</h3>
+                        <p>We believe successful investing requires discipline, patience, and a long-term perspective. Rather than chasing performance or timing markets, we focus on asset allocation, diversification, and cost control.</p>
+                        <p>Every portfolio we construct is unique, reflecting your individual circumstances, time horizon, and capacity for risk. We regularly review and rebalance to ensure your investments remain aligned with your goals.</p>
+                    </div>
+                    <div class="column-text">
+                        <h3>Fee structure</h3>
+                        <p>We operate on a transparent, fee-based model. Our charges are clearly explained before you become a client, with no hidden costs or commission-driven conflicts of interest.</p>
+                        <p>This alignment of interests ensures we're focused on what matters: helping you achieve your financial objectives. Many clients find that our advice more than pays for itself through improved outcomes and peace of mind.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accent-section">
+                <h2>Let's discuss your financial goals</h2>
+                <p>Schedule a no-obligation consultation to explore how we can help you build and preserve wealth.</p>
+                <a href="#contact" class="cta-button">Contact Us</a>
+            </div>
+        </div>
+
+        <!-- About Page -->
+        <div id="about" class="page-content">
+            <div class="content-section">
+                <div class="decorative-line"></div>
+                <h1 class="section-title">About Meridian Wealth</h1>
+                <p class="section-subtitle">Founded in 2003, Meridian Wealth has grown from a single-office practice to one of the region's most respected independent financial advisory firms.</p>
+
+                <div class="two-column">
+                    <div class="column-text">
+                        <h3>Our story</h3>
+                        <p>Meridian Wealth was established with a clear vision: to provide financial advice that truly serves clients' best interests. Our founders, having worked within large financial institutions, recognized the conflicts inherent in commission-based models and set out to create something different.</p>
+                        <p>From day one, we committed to independence, transparency, and putting clients first. Today, we manage over £1.8 billion on behalf of more than 950 client families across the UK.</p>
+                    </div>
+                    <div class="column-text">
+                        <h3>Our team</h3>
+                        <p>Our advisors hold advanced qualifications including Chartered Financial Planner status and are committed to ongoing professional development. Many have specialized expertise in areas such as pension transfers, inheritance tax planning, or investment management.</p>
+                        <p>Behind every client relationship is a dedicated support team ensuring smooth administration and exceptional service. We believe expertise matters, which is why we invest heavily in our people.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stats-banner">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">8</div>
+                        <div class="stat-label">Chartered Advisors</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">180+</div>
+                        <div class="stat-label">Years Combined Experience</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Independent Advice</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">4.9/5</div>
+                        <div class="stat-label">Client Satisfaction</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-section" style="padding-top: 3rem;">
+                <div class="decorative-line"></div>
+                <h2 class="section-title">Our principles</h2>
+                <div class="value-grid">
+                    <div class="value-item">
+                        <div class="value-number">01</div>
+                        <h3>Independence</h3>
+                        <p>We're not owned by banks or insurance companies. This independence allows us to recommend solutions from across the entire market without bias or restriction.</p>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-number">02</div>
+                        <h3>Integrity</h3>
+                        <p>We conduct our business with the highest ethical standards. Your trust is earned through consistent, honest advice and transparent communication.</p>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-number">03</div>
+                        <h3>Excellence</h3>
+                        <p>We pursue excellence in everything we do, from the quality of our advice to the service you experience. Continuous improvement is part of our culture.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quote-section">
+                <blockquote>"Our success is measured not by assets under management, but by the confidence and peace of mind our clients enjoy."</blockquote>
+                <div class="quote-author-line"></div>
+                <div class="quote-author">Elizabeth Thornton, Managing Partner</div>
+            </div>
+        </div>
+
+        <!-- Contact Page -->
+        <div id="contact" class="page-content">
+            <div class="content-section">
+                <div class="decorative-line"></div>
+                <h1 class="section-title">Let's start a conversation</h1>
+                <p class="section-subtitle">Whether you're looking for a second opinion on your current arrangements or starting your financial planning journey, we're here to help.</p>
+
+                <div class="contact-container">
+                    <div class="contact-details">
+                        <h3>Get in touch</h3>
+                        
+                        <div class="detail-item">
+                            <div class="detail-label">Office</div>
+                            <div class="detail-value">Meridian House<br>45-47 Queen Square<br>Bristol<br>BS1 4LH</div>
+                        </div>
+
+                        <div class="detail-item">
+                            <div class="detail-label">Telephone</div>
+                            <div class="detail-value">0117 924 8000</div>
+                        </div>
+
+                        <div class="detail-item">
+                            <div class="detail-label">Email</div>
+                            <div class="detail-value">enquiries@meridianwealth.co.uk</div>
+                        </div>
+
+                        <div class="detail-item">
+                            <div class="detail-label">Office Hours</div>
+                            <div class="detail-value">Monday - Friday: 9:00 - 17:30<br>Evening appointments available by arrangement</div>
+                        </div>
+
+                        <div style="margin-top: 2rem; padding-top: 2rem;">
+                            <p style="font-size: 0.85rem; color: #6a6a6a; line-height: 1.7; font-family: 'Inter', sans-serif;">Meridian Wealth is authorised and regulated by the Financial Conduct Authority. FCA Number: 123456.</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-form">
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Telephone Number</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">How can we help?</label>
+                                <textarea id="message" name="message" required></textarea>
+                            </div>
+                            <button type="submit" class="submit-button">Submit Enquiry</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quote-section">
+                <blockquote>"The first step towards financial clarity is simply having the right conversation."</blockquote>
+                <div class="quote-author-line"></div>
+                <div class="quote-author">Richard Carmichael, Founding Partner</div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Meridian Wealth</h4>
+                <p>Independent financial advisors providing bespoke wealth management and financial planning services since 2003.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#services">Investment Management</a></li>
+                    <li><a href="#services">Retirement Planning</a></li>
+                    <li><a href="#services">Tax Planning</a></li>
+                    <li><a href="#services">Estate Planning</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>About</h4>
+                <ul>
+                    <li><a href="#about">Our Story</a></li>
+                    <li><a href="#about">Our Team</a></li>
+                    <li><a href="#about">Our Approach</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Business</a></li>
+                    <li><a href="#">Complaints</a></li>
+                    <li><a href="#">Regulatory Information</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Meridian Wealth Advisors Ltd. All rights reserved. Registered in England & Wales No. 04567890. Authorised and regulated by the Financial Conduct Authority.</p>
+            <p>This is a demo site designed by <a href="../index.html"><strong>Aveline.Digital</strong></a></p>
+        </div>
+    </footer>
+
+    <div class="toast" id="toast">Thank you for your enquiry. A member of our team will be in touch within one business day.</div>
+    <script>
+        const navLinks = document.querySelectorAll('.nav-link');
+const pages = document.querySelectorAll('.page-content');
+const menuToggle = document.getElementById('menuToggle');
+const mainNav = document.getElementById('mainNav');
+let currentPage = 'home';
+
+// Define page order
+const pageOrder = ['home', 'services', 'about', 'contact'];
+
+// Mobile menu toggle
+menuToggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    mainNav.classList.toggle('active');
+});
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', (e) => {
+    if (mainNav.classList.contains('active') && 
+        !mainNav.contains(e.target) && 
+        !menuToggle.contains(e.target)) {
+        mainNav.classList.remove('active');
+    }
+});
+
+// Navigation
+navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        
+        const targetId = link.getAttribute('href').substring(1);
+        
+        if (targetId === currentPage) {
+            mainNav.classList.remove('active');
+            return;
+        }
+        
+        // Close mobile menu
+        mainNav.classList.remove('active');
+        
+        // Update active nav link
+        navLinks.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+        
+        // Get current and target pages
+        const currentPageEl = document.getElementById(currentPage);
+        const targetPageEl = document.getElementById(targetId);
+        
+        // Determine direction based on page order
+        const currentIndex = pageOrder.indexOf(currentPage);
+        const targetIndex = pageOrder.indexOf(targetId);
+        const goingRight = targetIndex > currentIndex;
+        
+        // Slide out current page
+        currentPageEl.classList.remove('active');
+        currentPageEl.classList.add(goingRight ? 'slide-out-left' : 'slide-out-right');
+        
+        // Prepare target page
+        targetPageEl.classList.add(goingRight ? 'slide-in-right' : 'slide-in-left');
+        
+        // Small delay to ensure classes are applied
+        setTimeout(() => {
+            // Slide in target page
+            targetPageEl.classList.remove(goingRight ? 'slide-in-right' : 'slide-in-left');
+            targetPageEl.classList.add('active');
+            
+            // Clean up after transition
+            setTimeout(() => {
+                currentPageEl.classList.remove('slide-out-left', 'slide-out-right');
+            }, 500);
+        }, 10);
+        
+        currentPage = targetId;
+        
+        // Update URL
+        history.pushState({ page: targetId }, '', '?' + targetId);
+        
+        // Scroll to top immediately
+        window.scrollTo(0, 0);
+    });
+});
+
+// Handle browser back/forward buttons
+window.addEventListener('popstate', (e) => {
+    if (e.state && e.state.page) {
+        const targetLink = document.querySelector(`a[href="#${e.state.page}"]`);
+        if (targetLink) {
+            targetLink.click();
+        }
+    }
+});
+
+// Initialize first state
+history.replaceState({ page: 'home' }, '', window.location.pathname);
+
+// Form submission
+document.getElementById('contactForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    const toast = document.getElementById('toast');
+    toast.classList.add('show');
+    
+    setTimeout(() => {
+        toast.classList.remove('show');
+    }, 4000);
+    
+    e.target.reset();
+});
+
+// CTA button navigation
+document.querySelectorAll('.cta-button').forEach(button => {
+    button.addEventListener('click', (e) => {
+        if (button.getAttribute('href') === '#contact') {
+            e.preventDefault();
+            const contactLink = document.querySelector('a[href="#contact"].nav-link');
+            if (contactLink) {
+                contactLink.click();
+            }
+        }
+    });
+});
+
+// Footer navigation links
+document.querySelectorAll('footer a[href^="#"]').forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = link.getAttribute('href').substring(1);
+        const targetNavLink = document.querySelector(`a[href="#${targetId}"].nav-link`);
+        if (targetNavLink) {
+            targetNavLink.click();
+        }
+    });
+});
+    </script>
+</body>
+</html>

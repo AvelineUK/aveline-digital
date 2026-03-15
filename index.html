@@ -476,6 +476,55 @@ footer{background:#080808;border-top:1px solid rgba(255,255,255,.05);padding:4.5
 .legal-content ul li{font-size:.9rem;color:var(--muted);line-height:1.7;margin-bottom:.3rem}
 .legal-content strong{color:var(--ink-soft);font-weight:500}
 
+/* ── PORTFOLIO PREVIEWS ─────────────────────────────── */
+.portfolio-strip{margin-top:3.5rem}
+.portfolio-label{font-family:var(--ff-head);font-size:.68rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:1.4rem;display:flex;align-items:center;gap:.75rem}
+.portfolio-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:1.5rem}
+
+.preview-card{border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;background:var(--surface);transition:border-color .25s,box-shadow .25s}
+.preview-card:hover{border-color:var(--border-hi);box-shadow:0 4px 24px rgba(0,0,0,.07)}
+
+.preview-browser{background:var(--bg-2);border-bottom:1px solid var(--border);padding:.5rem .8rem;display:flex;align-items:center;gap:.45rem}
+.preview-dot{width:7px;height:7px;border-radius:50%}
+.pd-r{background:#ff5f57}.pd-y{background:#ffbd2e}.pd-g{background:#28ca41}
+.preview-url{margin-left:.4rem;flex:1;background:var(--surface);border:1px solid var(--border);border-radius:2px;padding:.18rem .65rem;font-size:.68rem;color:var(--muted);font-family:monospace;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+.preview-viewport{position:relative;width:100%;padding-bottom:62.5%;overflow:hidden;background:var(--bg)}
+.preview-iframe-wrap{position:absolute;inset:0;overflow:hidden}
+.preview-iframe-wrap iframe{
+  width:1280px;height:960px;
+  border:none;
+  transform-origin:top left;
+  transform:scale(var(--preview-scale,0.3125));
+  pointer-events:none;
+}
+
+.preview-overlay{
+  position:absolute;inset:0;
+  display:flex;align-items:flex-end;justify-content:flex-end;
+  padding:.75rem;
+  background:linear-gradient(to top, rgba(0,0,0,.12) 0%, transparent 40%);
+  opacity:0;transition:opacity .25s;
+}
+.preview-card:hover .preview-overlay{opacity:1}
+.preview-open{
+  display:inline-flex;align-items:center;gap:.4rem;
+  background:var(--blue);color:#fff;
+  font-family:var(--ff-head);font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  padding:.45rem 1rem;border-radius:var(--radius);text-decoration:none;
+  box-shadow:0 2px 12px rgba(26,109,255,.3);
+  transition:background .2s;
+}
+.preview-open:hover{background:var(--blue-dk)}
+
+.preview-caption{padding:.75rem 1rem;display:flex;align-items:center;justify-content:space-between}
+.preview-name{font-family:var(--ff-head);font-size:.82rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--ink)}
+.preview-tag{font-size:.68rem;color:var(--muted)}
+
+/* Mobile: hide iframes, show link cards */
+.preview-mobile{display:none;padding:1.2rem;border-top:1px solid var(--border)}
+.preview-mobile a{display:flex;align-items:center;justify-content:space-between;color:var(--blue);font-family:var(--ff-head);font-size:.82rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;text-decoration:none}
+
 /* ── RESPONSIVE ─────────────────────────────────────── */
 @media(min-width:1025px){
   .mobile-menu,.mobile-overlay{display:none!important}
@@ -501,6 +550,11 @@ footer{background:#080808;border-top:1px solid rgba(255,255,255,.05);padding:4.5
   .hero-stat{min-width:50%;border-bottom:1px solid var(--border)}
   .form-row{grid-template-columns:1fr}
   .services-grid{grid-template-columns:1fr}
+}
+@media(max-width:830px){
+  .portfolio-grid{grid-template-columns:1fr}
+  .preview-viewport,.preview-iframe-wrap,.preview-overlay{display:none}
+  .preview-mobile{display:block}
 }
 @media(max-width:768px){
   .about-pillars,.sectors-grid,.footer-grid,.services-grid,.process-steps{grid-template-columns:1fr}
@@ -903,7 +957,7 @@ footer{background:#080808;border-top:1px solid rgba(255,255,255,.05);padding:4.5
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
         </div>
         <div class="service-name">Starter Site</div>
-        <p class="service-desc">A clean, professional single-page website covering your services, contact details, and the key information local customers need. Built properly from the start, not a template shortcut.</p>
+        <p class="service-desc">A clean, professional single-page website covering your services, contact details, and key information customers need. Built properly, not a template shortcut.</p>
         <ul class="service-features">
           <li>Custom design, built to your brand</li>
           <li>Fast, mobile-first, and accessible</li>
@@ -933,11 +987,81 @@ footer{background:#080808;border-top:1px solid rgba(255,255,255,.05);padding:4.5
         <div class="service-name">Grow When You're Ready</div>
         <p class="service-desc">Start with a solid foundation and expand it over time. Whether that's additional service pages, a blog, or a more complete multi-page site, we build with growth in mind.</p>
         <ul class="service-features">
-          <li>Easy to hand off to our management service</li>
+          <li>Easy hand off to our management service</li>
           <li>Expandable to a full multi-page site</li>
           <li>No lock-in: you own everything</li>
           <li>One-off fee, quoted per project</li>
         </ul>
+      </div>
+    </div>
+
+    <!-- Portfolio previews -->
+    <div class="portfolio-strip reveal">
+      <div class="portfolio-label">Examples of our work</div>
+      <div class="portfolio-grid">
+
+        <!-- Demo 1 -->
+        <div class="preview-card">
+          <div class="preview-browser">
+            <div class="preview-dot pd-r"></div>
+            <div class="preview-dot pd-y"></div>
+            <div class="preview-dot pd-g"></div>
+            <div class="preview-url">Green Fingers</div>
+          </div>
+          <div class="preview-viewport">
+            <div class="preview-iframe-wrap">
+              <iframe src="/demo-1/index.html" title="Demo site 1" loading="lazy" scrolling="no" tabindex="-1" aria-hidden="true"></iframe>
+            </div>
+            <div class="preview-overlay">
+              <a href="/demo-1/index.html" target="_blank" class="preview-open">
+                View Demo
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="preview-caption">
+            <div class="preview-name">Green Fingers (DEMO SITE)</div>
+            <div class="preview-tag">Landscaper</div>
+          </div>
+          <div class="preview-mobile">
+            <a href="/demo-1/index.html" target="_blank">
+              View Demo Site
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Demo 2 -->
+        <div class="preview-card">
+          <div class="preview-browser">
+            <div class="preview-dot pd-r"></div>
+            <div class="preview-dot pd-y"></div>
+            <div class="preview-dot pd-g"></div>
+            <div class="preview-url">Meridian Wealth</div>
+          </div>
+          <div class="preview-viewport">
+            <div class="preview-iframe-wrap">
+              <iframe src="/demo-2/index.html" title="Demo site 2" loading="lazy" scrolling="no" tabindex="-1" aria-hidden="true"></iframe>
+            </div>
+            <div class="preview-overlay">
+              <a href="/demo-2/index.html" target="_blank" class="preview-open">
+                View Demo
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="preview-caption">
+            <div class="preview-name">Meridian Wealth (DEMO SITE)</div>
+            <div class="preview-tag">Wealth Management</div>
+          </div>
+          <div class="preview-mobile">
+            <a href="/demo-2/index.html" target="_blank">
+              View Demo Site
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
@@ -1493,7 +1617,7 @@ footer{background:#080808;border-top:1px solid rgba(255,255,255,.05);padding:4.5
       <div>
         <div class="footer-col-title">Contact</div>
         <ul class="footer-links">
-          <li><a href="mailto:email">Email</a></li>
+          <li><a href="/cdn-cgi/l/email-protection#56333b373f3a">Email</a></li>
           <li><a href="#" onclick="openModal('contactModal');return false;">Form</a></li>
         </ul>
       </div>
@@ -1513,7 +1637,24 @@ footer{background:#080808;border-top:1px solid rgba(255,255,255,.05);padding:4.5
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
+/* ── PORTFOLIO PREVIEW SCALE ─────────────────────────── */
+function setPreviewScale() {
+  document.querySelectorAll('.preview-iframe-wrap').forEach(wrap => {
+    const scale = wrap.offsetWidth / 1280;
+    wrap.style.setProperty('--preview-scale', scale);
+    const iframe = wrap.querySelector('iframe');
+    if (iframe) {
+      iframe.style.transform = `scale(${scale})`;
+      // Height of scaled iframe = 960 * scale, so set padding-bottom on viewport accordingly
+      const viewport = wrap.closest('.preview-viewport');
+      if (viewport) viewport.style.paddingBottom = (960 * scale) + 'px';
+    }
+  });
+}
+window.addEventListener('load', setPreviewScale);
+window.addEventListener('resize', setPreviewScale);
+
 /* ── SCROLL PROGRESS BAR ─────────────────────────────── */
 const scrollBar = document.getElementById('scroll-bar');
 window.addEventListener('scroll', () => {
