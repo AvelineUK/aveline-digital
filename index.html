@@ -137,19 +137,10 @@ body{font-family:var(--ff-body);background:var(--bg);color:var(--ink);font-size:
 a {color: var(--ink)}
 
 /* ── NOISE ──────────────────────────────────────────── */
-body::before{
-  content:'';position:fixed;inset:0;pointer-events:none;z-index:1000;opacity:.022;
-  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  background-size:180px
-}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:1000;opacity:.022;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:180px}
 
 /* ── SCROLL PROGRESS BAR ────────────────────────────── */
-#scroll-bar{
-  position:fixed;top:0;left:0;height:3px;width:0%;
-  background:var(--blue);z-index:9999;
-  transition:width .05s linear;
-  box-shadow:0 0 8px var(--blue-glow);
-}
+#scroll-bar{position:fixed;top:0;left:0;height:3px;width:0%;background:var(--blue);z-index:9999;transition:width .05s linear;box-shadow:0 0 8px var(--blue-glow);}
 
 /* ── CURSOR ─────────────────────────────────────────── */
 .cursor{width:8px;height:8px;background:var(--blue);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9998;transition:width .2s,height .2s;box-shadow:0 0 10px var(--blue-glow)}
@@ -159,7 +150,6 @@ body::before{
 
 /* ── UTILITY ────────────────────────────────────────── */
 .container{max-width:var(--max);margin:0 auto;padding:0 var(--gutter)}
-
 .tag{display:inline-flex;align-items:center;gap:.5rem;font-size:.68rem;font-family:var(--ff-head);font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--blue);padding:.3rem .8rem;border:1px solid rgba(26,109,255,.35);border-radius:2px;margin-bottom:1.6rem;background:rgba(26,109,255,.1)}
 .tag .blink{width:6px;height:6px;background:var(--blue);border-radius:50%;display:inline-block;box-shadow:0 0 6px var(--blue-glow);animation:blink 2s ease-in-out infinite}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
@@ -198,23 +188,17 @@ nav.scrolled{background:rgba(13,17,23,.95);backdrop-filter:blur(16px);border-col
 .hero-grid-bg{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.03)1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03)1px,transparent 1px);background-size:60px 60px;-webkit-mask-image:radial-gradient(ellipse 80% 80% at 55% 40%,black 20%,transparent 100%);mask-image:radial-gradient(ellipse 80% 80% at 55% 40%,black 20%,transparent 100%)}
 .hero-orb{position:absolute;top:-20%;right:-10%;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(26,109,255,.14)0%,transparent 65%);pointer-events:none;animation:orb-drift 8s ease-in-out infinite}
 @keyframes orb-drift{0%,100%{top:-20%;right:-10%}50%{top:-10%;right:-5%}}
-
 .hero-content{position:relative;z-index:2;max-width:920px;animation:fadeUp .9s cubic-bezier(.16,1,.3,1) both}
 @keyframes fadeUp{from{opacity:0}to{opacity:1}}
-
 .hero-headline{font-family:var(--ff-head);font-size:clamp(4rem,9vw,8.5rem);font-weight:800;line-height:.92;letter-spacing:.01em;color:var(--ink);margin-bottom:2rem;text-transform:uppercase}
 .hero-headline .outline{display:block;color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.15)}
 .hero-headline .hl{color:var(--blue)}
-
 .hero-sub{font-size:clamp(1rem,1.5vw,1.12rem);font-weight:300;color:var(--muted);max-width:500px;line-height:1.75;margin-bottom:3rem}
 .hero-actions{display:flex;align-items:center;gap:1.2rem;flex-wrap:wrap}
-
 .btn-primary{display:inline-flex;align-items:center;gap:.4rem;background:var(--blue);color:#fff;padding:.85rem 2rem;font-family:var(--ff-head);font-size:.85rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border-radius:var(--radius);border:none;cursor:pointer;transition:background .2s,box-shadow .2s;box-shadow:0 2px 16px rgba(26,109,255,.2)}
 .btn-primary:hover{background:var(--blue-dk);box-shadow:0 4px 28px var(--blue-glow)}
-
 .btn-ghost{display:inline-flex;align-items:center;gap:.5rem;color:var(--ink-soft);font-family:var(--ff-head);font-size:.85rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid var(--border);padding:.85rem 2rem;border-radius:var(--radius);transition:color .2s,border-color .2s;background:transparent}
 .btn-ghost:hover{color:var(--ink);border-color:var(--border-hi)}
-
 .hero-stats{position:relative;z-index:2;display:flex;gap:0;margin-top:5rem;border-top:1px solid var(--border);animation:fadeUp .9s .2s cubic-bezier(.16,1,.3,1) both}
 .hero-stat{flex:1;padding:1.8rem 2rem;border-right:1px solid var(--border);transition:background .25s}
 .hero-stat:last-child{border-right:none}
@@ -222,7 +206,6 @@ nav.scrolled{background:rgba(13,17,23,.95);backdrop-filter:blur(16px);border-col
 .stat-val{font-family:var(--ff-head);font-size:2.1rem;font-weight:800;letter-spacing:0;line-height:1;margin-bottom:.35rem;color:var(--ink)}
 .stat-val .b{color:var(--blue)}
 .stat-lbl{font-size:.8rem;color:var(--muted);line-height:1.4}
-
 .hero-scroll{position:absolute;bottom:2rem;left:var(--gutter);z-index:3;display:flex;align-items:center;gap:.6rem;font-family:var(--ff-head);font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted-2)}
 .scroll-line{width:1px;height:36px;background:linear-gradient(to bottom,var(--blue),transparent);animation:scroll-drop 2s ease-in-out infinite}
 @keyframes scroll-drop{0%,100%{opacity:1}50%{opacity:.2}}
@@ -236,7 +219,6 @@ nav.scrolled{background:rgba(13,17,23,.95);backdrop-filter:blur(16px);border-col
 
 /* ── SECTIONS ───────────────────────────────────────── */
 section{padding:clamp(5rem,10vw,9rem) 0;scroll-margin-top:72px}
-
 .s-title{font-family:var(--ff-head);font-size:clamp(2.6rem,4.5vw,4rem);font-weight:800;letter-spacing:.01em;line-height:.95;color:var(--ink);text-transform:uppercase}
 .s-title .b{color:var(--blue)}
 .s-title .outline{color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.12)}
@@ -250,7 +232,6 @@ section{padding:clamp(5rem,10vw,9rem) 0;scroll-margin-top:72px}
 .pillar:hover{background:var(--surface)}
 .pillar-name{font-family:var(--ff-head);font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:.3rem}
 .pillar-desc{font-size:.84rem;color:var(--muted);line-height:1.55}
-
 .about-visual{position:relative;height:500px}
 .about-screen{position:absolute;top:0;right:0;width:92%;height:90%;background:var(--surface);border:1px solid var(--border);border-radius:6px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 8px 40px rgba(0,0,0,.08)}
 .screen-bar{background:var(--bg-2);border-bottom:1px solid var(--border);padding:.7rem 1rem;display:flex;align-items:center;gap:.5rem}
@@ -284,7 +265,6 @@ section{padding:clamp(5rem,10vw,9rem) 0;scroll-margin-top:72px}
 .service-section-header{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;margin-bottom:3rem}
 .service-section-intro{font-size:1rem;font-weight:300;color:var(--muted);line-height:1.8}
 .service-section-tag{font-family:var(--ff-head);font-size:.68rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--blue);margin-bottom:.6rem}
-
 .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border)}
 .services-grid.two-col{grid-template-columns:repeat(2,1fr)}
 .service-card{background:var(--surface);padding:2.2rem 1.8rem;position:relative;overflow:hidden;transition:background .3s}
@@ -340,28 +320,26 @@ section{padding:clamp(5rem,10vw,9rem) 0;scroll-margin-top:72px}
 .faq{background:var(--bg)}
 .faq-header{text-align:center;margin-bottom:3.5rem}
 .faq-header .tag{margin:0 auto 1rem}
-
-.faq-body{max-width:860px;margin:0 auto;display:flex;flex-direction:column;gap:3rem}
-
-.faq-cat-label{font-family:var(--ff-head);font-size:1rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:1rem;display:flex;align-items:center;gap:.75rem}
-.faq-cat-label::after{content:'';flex:1;height:1px;background:var(--border-hi)}
-
-.faq-list{border:1px solid var(--border);background:var(--border);display:flex;flex-direction:column;gap:1px}
-
+.faq-body{max-width:860px;margin:0 auto;display:flex;flex-direction:column;gap:.6rem}
+.faq-cat-label{display:none}
+.faq-cat-btn{width:100%;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;padding:1.3rem 1.8rem;font-family:var(--ff-head);font-size:1.2rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);background:var(--surface);border:1px solid var(--border);cursor:pointer;transition:background .2s,color .2s,border-color .2s;text-align:left}
+.faq-cat-btn:hover{background:var(--bg-2);color:var(--ink);border-color:var(--border-hi)}
+.faq-category.cat-open .faq-cat-btn{color:var(--ink);border-color:var(--border-hi);background:var(--bg-2)}
+.faq-cat-icon{flex-shrink:0;width:24px;height:24px;border:1px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--blue);transition:transform .35s cubic-bezier(.16,1,.3,1),background .2s,border-color .2s}
+.faq-category.cat-open .faq-cat-icon{transform:rotate(45deg);background:var(--blue-lt);border-color:var(--blue)}
+.faq-cat-wrap{display:grid;grid-template-rows:0fr;transition:grid-template-rows .38s cubic-bezier(.16,1,.3,1);overflow:hidden}
+.faq-category.cat-open .faq-cat-wrap{grid-template-rows:1fr}
+.faq-cat-inner{overflow:hidden}
+.faq-list{border:1px solid var(--border);border-top:none;background:var(--border);display:flex;flex-direction:column;gap:1px}
 .faq-item{background:var(--surface);overflow:hidden}
-
-.faq-q{  width:100%;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;padding:1.4rem 1.6rem;font-family:var(--ff-head);font-size:1.05rem;font-weight:700;letter-spacing:.03em;text-transform:uppercase;color:var(--ink);text-align:left;background:transparent;border:none;cursor:pointer;transition:background .2s,color .2s;line-height:1.3;}
+.faq-q{  width:100%;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;padding:1.4rem 1.6rem;font-family:var(--ff-head);font-size:1rem;font-weight:700;letter-spacing:.03em;text-transform:uppercase;color:var(--ink);text-align:left;background:transparent;border:none;cursor:pointer;transition:background .2s,color .2s;line-height:1.3;}
 .faq-q:hover{background:var(--bg);color:var(--blue)}
-
 .faq-icon{  flex-shrink:0;width:24px;height:24px;border:1px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--blue);transition:transform .35s cubic-bezier(.16,1,.3,1),background .2s,border-color .2s;}
 .faq-icon svg{display:block}
 .faq-item.open .faq-icon{transform:rotate(45deg);background:var(--blue-lt);border-color:var(--blue)}
-
 .faq-a-wrap{display:grid;grid-template-rows:0fr;transition:grid-template-rows .38s cubic-bezier(.16,1,.3,1);}
 .faq-item.open .faq-a-wrap{grid-template-rows:1fr}
-
 .faq-a-inner{overflow:hidden}
-
 .faq-a{padding:1.5rem 1.6rem 1.5rem;  font-size:.9rem;font-weight:300;color:var(--muted);line-height:1.8;}
 .faq-a p+p{margin-top:.85rem}
 .faq-a strong{font-weight:500;color:var(--ink-soft)}
@@ -495,30 +473,10 @@ footer{background:#080d14;border-top:1px solid rgba(255,255,255,.05);padding:4.5
 
 .preview-viewport{position:relative;width:100%;padding-bottom:62.5%;overflow:hidden;background:var(--bg)}
 .preview-iframe-wrap{position:absolute;inset:0;overflow:hidden}
-.preview-iframe-wrap iframe{
-  width:1280px;height:960px;
-  border:none;
-  transform-origin:top left;
-  transform:scale(var(--preview-scale,0.3125));
-  pointer-events:none;
-}
+.preview-iframe-wrap iframe{width:1280px;height:960px;border:none;transform-origin:top left;transform:scale(var(--preview-scale,0.3125));pointer-events:none;}
 
-.preview-overlay{
-  position:absolute;inset:0;
-  display:flex;align-items:flex-end;justify-content:flex-end;
-  padding:.75rem;
-  background:linear-gradient(to top, rgba(0,0,0,.12) 0%, transparent 40%);
-  opacity:0;transition:opacity .25s;
-}
-.preview-card:hover .preview-overlay{opacity:1}
-.preview-open{
-  display:inline-flex;align-items:center;gap:.4rem;
-  background:var(--blue);color:#fff;
-  font-family:var(--ff-head);font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
-  padding:.45rem 1rem;border-radius:var(--radius);text-decoration:none;
-  box-shadow:0 2px 12px rgba(26,109,255,.3);
-  transition:background .2s;
-}
+.preview-overlay{position:absolute;inset:0;display:flex;align-items:flex-end;justify-content:flex-end;padding:.75rem;  background:linear-gradient(to top, rgba(0,0,0,.12) 0%, transparent 40%);opacity:0;transition:opacity .25s;}
+.preview-card:hover .preview-overlay{opacity:1}.preview-open{display:inline-flex;align-items:center;gap:.4rem;background:var(--blue);color:#fff;font-family:var(--ff-head);font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.45rem 1rem;border-radius:var(--radius);text-decoration:none;box-shadow:0 2px 12px rgba(26,109,255,.3);transition:background .2s;}
 .preview-open:hover{background:var(--blue-dk)}
 
 .preview-caption{padding:.75rem 1rem;display:flex;align-items:center;justify-content:space-between}
@@ -526,7 +484,7 @@ footer{background:#080d14;border-top:1px solid rgba(255,255,255,.05);padding:4.5
 .preview-tag{font-size:.68rem;color:var(--muted)}
 
 /* Mobile: hide iframes, show link cards */
-.preview-mobile{display:none;padding:1.2rem;border-top:1px solid var(--border)}
+.preview-mobile{display:none;padding:0.5rem;border-top:1px solid var(--border)}
 .preview-mobile a{display:flex;align-items:center;justify-content:space-between;color:var(--blue);font-family:var(--ff-head);font-size:.82rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;text-decoration:none}
 
 /* ── RESPONSIVE ─────────────────────────────────────── */
@@ -557,8 +515,8 @@ footer{background:#080d14;border-top:1px solid rgba(255,255,255,.05);padding:4.5
 }
 @media(max-width:830px){
   .portfolio-grid{grid-template-columns:1fr}
-  .preview-viewport,.preview-iframe-wrap,.preview-overlay{display:none}
   .preview-mobile{display:block}
+  .preview-caption{padding:0.5rem;flex-direction:column}
 }
 @media(max-width:768px){
   .about-pillars,.sectors-grid,.footer-grid,.services-grid,.process-steps{grid-template-columns:1fr}
@@ -916,7 +874,7 @@ footer{background:#080d14;border-top:1px solid rgba(255,255,255,.05);padding:4.5
         <div class="service-section-tag reveal-left">Google Business Profile Management</div>
         <h2 class="s-title reveal-left reveal-delay-1">Your Map listing,<br><span class="b">properly managed.</span></h2>
       </div>
-      <p class="service-section-intro reveal-right reveal-delay-2">Your Google Business Profile is often the first thing a local customer sees. We keep it optimised, active, and working hard to rank in the Local Pack and on Maps.</p>
+      <p class="service-section-intro reveal-right reveal-delay-2">Your Google Business Profile is often the first thing a local customer sees. We keep it optimised, active, and working hard to rank in the Local Pack and on Maps — and we make sure the wider web backs it up too.</p>
     </div>
     <div class="services-grid reveal">
       <div class="service-card">
@@ -950,15 +908,15 @@ footer{background:#080d14;border-top:1px solid rgba(255,255,255,.05);padding:4.5
       <div class="service-card">
         <div class="service-num">03</div>
         <div class="service-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
         </div>
-        <div class="service-name">Performance Reporting</div>
-        <p class="service-desc">A clear monthly picture of how your profile is performing: what's working, where you're ranking, and what we're doing next. No jargon, no vanity metrics.</p>
+        <div class="service-name">Citation Management</div>
+        <p class="service-desc">Your profile is only as strong as information backing it up across the web. We audit your directory listings, fix inconsistencies, and add new citations on trusted sites.</p>
         <ul class="service-features">
-          <li>Rankings &amp; visibility tracking</li>
-          <li>Call &amp; direction click data</li>
-          <li>Alerts for unexpected profile changes</li>
-          <li>Plain-English commentary</li>
+          <li>NAP consistency audit</li>
+          <li>Directory listing corrections</li>
+          <li>New citation building</li>
+          <li>Ongoing citation monitoring</li>
         </ul>
       </div>
     </div>
@@ -981,7 +939,7 @@ footer{background:#080d14;border-top:1px solid rgba(255,255,255,.05);padding:4.5
         <div class="service-icon">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
         </div>
-        <div class="service-name">Starter Site</div>
+        <div class="service-name">Professional Site</div>
         <p class="service-desc">A clean, professional single-page website covering your services, contact details, and key information customers need. Built properly, not a template shortcut.</p>
         <ul class="service-features">
           <li>Custom design, built to your brand</li>
@@ -1035,10 +993,10 @@ footer{background:#080d14;border-top:1px solid rgba(255,255,255,.05);padding:4.5
           </div>
           <div class="preview-viewport">
             <div class="preview-iframe-wrap">
-              <iframe src="/demo-1/index.html" title="Demo site 1" loading="lazy" scrolling="no" tabindex="-1" aria-hidden="true"></iframe>
+              <iframe src="/demo-1/" title="Demo site 1" loading="lazy" scrolling="no" tabindex="-1" aria-hidden="true"></iframe>
             </div>
             <div class="preview-overlay">
-              <a href="/demo-1/index.html" target="_blank" class="preview-open">
+              <a href="/demo-1/" target="_blank" class="preview-open">
                 View Demo
                 <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
               </a>
@@ -1049,7 +1007,7 @@ footer{background:#080d14;border-top:1px solid rgba(255,255,255,.05);padding:4.5
             <div class="preview-tag">Landscaper</div>
           </div>
           <div class="preview-mobile">
-            <a href="/demo-1/index.html" target="_blank">
+            <a href="/demo-1/" target="_blank">
               View Demo Site
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
             </a>
@@ -1066,10 +1024,10 @@ footer{background:#080d14;border-top:1px solid rgba(255,255,255,.05);padding:4.5
           </div>
           <div class="preview-viewport">
             <div class="preview-iframe-wrap">
-              <iframe src="/demo-2/index.html" title="Demo site 2" loading="lazy" scrolling="no" tabindex="-1" aria-hidden="true"></iframe>
+              <iframe src="/demo-2/" title="Demo site 2" loading="lazy" scrolling="no" tabindex="-1" aria-hidden="true"></iframe>
             </div>
             <div class="preview-overlay">
-              <a href="/demo-2/index.html" target="_blank" class="preview-open">
+              <a href="/demo-2/" target="_blank" class="preview-open">
                 View Demo
                 <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
               </a>
@@ -1080,7 +1038,7 @@ footer{background:#080d14;border-top:1px solid rgba(255,255,255,.05);padding:4.5
             <div class="preview-tag">Wealth Management</div>
           </div>
           <div class="preview-mobile">
-            <a href="/demo-2/index.html" target="_blank">
+            <a href="/demo-2/" target="_blank">
               View Demo Site
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
             </a>
@@ -1158,7 +1116,7 @@ footer{background:#080d14;border-top:1px solid rgba(255,255,255,.05);padding:4.5
         <div class="service-section-tag reveal-left">Local SEO</div>
         <h2 class="s-title reveal-left reveal-delay-1">Rank higher,<br><span class="b">locally.</span></h2>
       </div>
-      <p class="service-section-intro reveal-right reveal-delay-2">Ranking well on Google Maps is only part of the picture. Local SEO makes sure your whole online presence — your site, your citations, and your content — is working together to bring in nearby customers.</p>
+      <p class="service-section-intro reveal-right reveal-delay-2">Ranking well on Google Maps is only part of the picture. Local SEO makes sure your website is working just as hard as your profile — targeting the right search terms, structured for local rankings, and visible in organic results as well as Maps.</p>
     </div>
     <div class="services-grid reveal">
       <div class="service-card">
@@ -1178,15 +1136,15 @@ footer{background:#080d14;border-top:1px solid rgba(255,255,255,.05);padding:4.5
       <div class="service-card">
         <div class="service-num">02</div>
         <div class="service-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
         </div>
-        <div class="service-name">Citation Maintenance</div>
-        <p class="service-desc">Consistent business information across the web is a key ranking factor. We audit your listings, fix inconsistencies, and build new citations on trusted directories.</p>
+        <div class="service-name">On-Page Optimisation</div>
+        <p class="service-desc">We make sure your website is structured to rank local searches, from page titles and headings, to schema markup and location signals throughout your content.</p>
         <ul class="service-features">
-          <li>NAP consistency audit</li>
-          <li>Directory listing corrections</li>
-          <li>New citation building</li>
-          <li>Ongoing citation monitoring</li>
+          <li>Location-optimised page titles &amp; meta</li>
+          <li>Heading structure &amp; content improvements</li>
+          <li>LocalBusiness schema markup</li>
+          <li>Internal linking &amp; structure review</li>
         </ul>
       </div>
       <div class="service-card">
@@ -1199,7 +1157,7 @@ footer{background:#080d14;border-top:1px solid rgba(255,255,255,.05);padding:4.5
         <ul class="service-features">
           <li>Local keyword ranking tracking</li>
           <li>Visibility &amp; traffic trends</li>
-          <li>Citation health overview</li>
+          <li>On-page optimisation progress</li>
           <li>Plain-English monthly summary</li>
         </ul>
       </div>
@@ -1350,235 +1308,262 @@ footer{background:#080d14;border-top:1px solid rgba(255,255,255,.05);padding:4.5
 
       <!-- General -->
       <div class="faq-category">
-        <div class="faq-cat-label">General</div>
+        <button type="button" class="faq-cat-btn">General<span class="faq-cat-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
+        <div class="faq-cat-wrap"><div class="faq-cat-inner">
         <div class="faq-list">
 
           <div class="faq-item">
-            <button class="faq-q">What kind of businesses do you work with?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
+            <button type="button" class="faq-q">What kind of businesses do you work with?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
             <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>We focus on local businesses that rely on customers in their area: trades and contractors, restaurants, professional services, retailers, and similar. If you serve a local customer base and want to be easier to find online, we're likely a good fit.</p></div></div></div>
           </div>
 
           <div class="faq-item">
-            <button class="faq-q">Do I need to take all of your services?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
+            <button type="button" class="faq-q">Do I need to take all of your services?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
             <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>Mostly no. GBP management, website builds, and website management can all be taken separately without any need to take anything else. The only exception is local SEO: to ensure I provide the best value for money, it's essential I managed your GBP and website, as both of these are essential.</p></div></div></div>
           </div>
 
           <div class="faq-item">
-            <button class="faq-q">What happens if I cancel?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
+            <button type="button" class="faq-q">What happens if I cancel?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
             <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>We'll continue delivering your services until the end of your current billing period, then hand everything back cleanly, and you keep full access to all your accounts. No hard feelings, no hassle.</p></div></div></div>
           </div>
 
           <div class="faq-item">
-            <button class="faq-q">What if I need to update my business information?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
+            <button type="button" class="faq-q">What if I need to update my business information?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
             <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>Just email us. Whether it's opening hours, phone numbers, services, pricing, or anything else, we'll update it across your profile, website, and any directory listings we manage, as soon as we receive your message.</p></div></div></div>
           </div>
 
+          <div class="faq-item">
+            <button type="button" class="faq-q">Why don't you have a Google Business Profile?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
+            <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>Google only allows businesses with a physical location that customers can visit, or that serve customers face-to-face within a defined area, to have a Google Business Profile. As an online-only service business, we don't meet either condition, so we're not eligible for one. We're in good company: many legitimate service businesses operate the same way. It's one of those quirks of the platform worth knowing about, which is why we've explained it here rather than leaving you to wonder.</p></div></div></div>
+          </div>
+
         </div>
+        </div></div>
       </div>
 
       <!-- Google Business Profile -->
       <div class="faq-category">
-        <div class="faq-cat-label">Google Business Profile</div>
+        <button type="button" class="faq-cat-btn">Google Business Profile<span class="faq-cat-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
+        <div class="faq-cat-wrap"><div class="faq-cat-inner">
         <div class="faq-list">
 
           <div class="faq-item">
-            <button class="faq-q">Do I need to give you access to my Google account?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
+            <button type="button" class="faq-q">Do I need to give you access to my Google account?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
             <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>No. You'll add us as a manager to your Business Profile only. <strong>We never need access to your personal Google account. You keep full control and can remove our access at any time.</strong></p></div></div></div>
           </div>
 
           <div class="faq-item">
-            <button class="faq-q">What if I don't have a Google Business Profile yet?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
+            <button type="button" class="faq-q">What if I don't have a Google Business Profile yet?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
             <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>No problem. We can help you set one up as part of the initial setup process. Most businesses already have one: even if they didn't create it, Google often creates them automatically. If you genuinely don't have one, we'll get you sorted.</p></div></div></div>
           </div>
 
           <div class="faq-item">
-            <button class="faq-q">Can I still make changes to my profile myself?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
+            <button type="button" class="faq-q">Can I still make changes to my profile myself?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
             <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>Absolutely. You keep full access and can make updates whenever you want. We just make sure everything stays optimised, up-to-date, and professionally managed alongside anything you do.</p></div></div></div>
           </div>
 
           <div class="faq-item">
-            <button class="faq-q">How quickly do you respond to reviews?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
+            <button type="button" class="faq-q">How quickly do you respond to reviews?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
             <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>We monitor profiles daily and respond to all reviews as soon as possible, usually within 72 hours.</p></div></div></div>
           </div>
 
           <div class="faq-item">
-            <button class="faq-q">What happens with negative reviews?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
+            <button type="button" class="faq-q">What happens with negative reviews?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
             <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>We respond professionally to every review, including negative ones. A well-handled negative review can actually build trust with potential customers: it shows you take feedback seriously and care about making things right. We'll craft a response that addresses their concerns while maintaining your professional reputation.</p></div></div></div>
           </div>
 
           <div class="faq-item">
-            <button class="faq-q">How do you know what to post about my business?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
+            <button type="button" class="faq-q">How do you know what to post about my business?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
             <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>We use a combination of your customer reviews, seasonal prompts, service highlights, and any photos you send us. We focus on highlighting your work, sharing customer feedback, and keeping your profile active and relevant.</p></div></div></div>
           </div>
 
           <div class="faq-item">
-            <button class="faq-q">Do I have to send you photos regularly?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
+            <button type="button" class="faq-q">Do I have to send you photos regularly?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
             <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>You don't have to, but it's strongly recommended. If you send us photos of recent work, we can create more visual posts and keep your profile looking fresh. If you don't have time, we'll keep things active with review highlights and service updates instead.</p></div></div></div>
           </div>
 
           <div class="faq-item">
-            <button class="faq-q">How quickly will I see results?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
+            <button type="button" class="faq-q">How quickly will I see results?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
             <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>Your profile will look more complete and professional within the first two weeks. Increased visibility in local search typically builds over 4-8 weeks as Google recognises your active, well-maintained profile. Most clients see steady improvement in views and customer actions within 3-6 months, but it's an ongoing process, not a one-time fix.</p></div></div></div>
           </div>
 
           <div class="faq-item">
-            <button class="faq-q">Can you guarantee I'll rank #1?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
+            <button type="button" class="faq-q">Can you guarantee I'll rank #1?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
             <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>No, and anyone who promises guaranteed rankings isn't being straight with you. We can't control Google's algorithm or what your competitors do. What we can do is optimise your profile using best practices, keep it active and professional, and give you the best possible chance of showing up when it matters.</p></div></div></div>
           </div>
 
+          <div class="faq-item">
+            <button type="button" class="faq-q">Do you manage citations as part of this package?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
+            <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>Yes. Citation management is included in the GBP management package, because citations exist primarily to support your profile. Consistent business information across directories like Yell, Yelp, and Thomson Local acts as a trust signal to Google, strengthening your local rankings. We audit your existing listings, fix any inconsistencies, build new citations where needed, and monitor them on an ongoing basis.</p></div></div></div>
+          </div>
+
         </div>
+        </div></div>
       </div>
 
       <!-- Website Build -->
       <div class="faq-category">
-        <div class="faq-cat-label">Website Build</div>
+        <button type="button" class="faq-cat-btn">Website Build<span class="faq-cat-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
+        <div class="faq-cat-wrap"><div class="faq-cat-inner">
         <div class="faq-list">
 
           <div class="faq-item">
-            <button class="faq-q">What kind of websites do you build?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
+            <button type="button" class="faq-q">What kind of websites do you build?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
             <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>We build clean, professional websites for local businesses, typically a single-page or small multi-page site covering your services, contact details, and the key information local customers need. Every site is built with local search in mind from the start: fast, mobile-first, and properly structured for Google.</p></div></div></div>
           </div>
 
           <div class="faq-item">
-            <button class="faq-q">How much does a website build cost?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
+            <button type="button" class="faq-q">How much does a website build cost?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
             <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>Website builds are quoted on a per-project basis: it depends on the number of pages, complexity, and what you need. Get in touch and we'll give you a clear, fixed price before anything is agreed. There are no hidden costs and the price won't change unless you change the scope.</p></div></div></div>
           </div>
 
           <div class="faq-item">
-            <button class="faq-q">How long does a website build take?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
+            <button type="button" class="faq-q">How long does a website build take?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
             <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>For a typical local business site, expect around 2-4 weeks from project start to launch. That assumes content is ready and feedback comes in promptly. We'll give you a realistic timeline upfront, and if anything changes, we'll let you know straight away.</p></div></div></div>
           </div>
 
           <div class="faq-item">
-            <button class="faq-q">Do I need to provide the content?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
+            <button type="button" class="faq-q">Do I need to provide the content?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
             <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>Yes. You'll need to provide the text for each page and any photos or images you want to use. We'll handle the layout, formatting, and making it look good. If you're not sure what to write, we can talk through what each page needs, but the core content needs to come from you, since you know your business best.</p></div></div></div>
           </div>
 
           <div class="faq-item">
-            <button class="faq-q">What about hosting and domain names?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
+            <button type="button" class="faq-q">What about hosting and domain names?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
             <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>Domain registration and hosting aren't included in the build price, but we'll advise you on the best options for your situation and help you get set up. You own both: they're registered in your name and you keep full control.</p></div></div></div>
           </div>
 
           <div class="faq-item">
-            <button class="faq-q">Can you manage the site after it's built?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
-            <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>Absolutely. In fact, this is the ideal setup. Because we built it, there's no handover friction; we already know the site inside out. Ongoing management is available as a separate monthly service, covering content updates, security, performance, and reporting.</p></div></div></div>
+            <button type="button" class="faq-q">Can you manage the site after it's built?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
+            <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>Absolutely. In fact, this is the ideal setup. Because we built it, there's no handover friction; we already know the site inside out. Ongoing management is available as a separate monthly service, covering content updates, security, performance, and reporting. And, as an added bonus: if we make your site and you choose to have us continue to maintain it after it's been built, there'll be no set-up fee for the website management service.</p></div></div></div>
+          </div>
+
+          <div class="faq-item">
+            <button type="button" class="faq-q">Why don't you have a Google Business Profile?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
+            <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>Google only allows businesses with a physical location that customers can visit, or that serve customers face-to-face within a defined area, to have a Google Business Profile. As an online-only service business, we don't meet either condition, so we're not eligible for one. We're in good company: many legitimate service businesses operate the same way. It's one of those quirks of the platform worth knowing about, which is why we've explained it here rather than leaving you to wonder.</p></div></div></div>
           </div>
 
         </div>
+        </div></div>
       </div>
 
       <!-- Website Management -->
       <div class="faq-category">
-        <div class="faq-cat-label">Website Management</div>
+        <button type="button" class="faq-cat-btn">Website Management<span class="faq-cat-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
+        <div class="faq-cat-wrap"><div class="faq-cat-inner">
         <div class="faq-list">
 
           <div class="faq-item">
-            <button class="faq-q">What platforms do you support?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
+            <button type="button" class="faq-q">What platforms do you support?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
             <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>We work with most common platforms: WordPress, Wix, Squarespace, and others. What we can do varies slightly by platform: WordPress gives us the most flexibility, while hosted builders like Wix and Squarespace have certain limitations built in. We'll be upfront about what's possible before we start.</p></div></div></div>
           </div>
 
           <div class="faq-item">
-            <button class="faq-q">Do you build websites from scratch?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
-            <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>Yes. We offer a separate website build service for businesses that don't have a site yet, or whose current one isn't up to the job. See the <a href="#website-build" style="color:var(--blue);">Website Build</a> section for more detail.</p></div></div></div>
+            <button type="button" class="faq-q">Do you build websites from scratch?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
+            <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>Yes. We offer a separate website build service for businesses that don't have a site yet, or whose current one isn't up to the job. See the <a href="#website-build" style="color:var(--ink);">Website Build</a> section for more details.</p></div></div></div>
           </div>
 
           <div class="faq-item">
-            <button class="faq-q">How do I get changes made to my site?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
+            <button type="button" class="faq-q">How do I get changes made to my site?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
             <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>Just email us with what you need. There's no ticketing system or portal to navigate: a straightforward email is all it takes. We aim to turn around routine content updates within seventy two hours.</p></div></div></div>
           </div>
 
           <div class="faq-item">
-            <button class="faq-q">Is there a limit to how many changes I can request?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
+            <button type="button" class="faq-q">Is there a limit to how many changes I can request?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
             <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>Our service covers the ongoing upkeep and maintenance a typical local business website needs. Routine updates — hours, pricing, text, images, new pages — are all included. If you have a large one-off project (a complete redesign, for example), we'll discuss that separately.</p></div></div></div>
           </div>
 
           <div class="faq-item">
-            <button class="faq-q">What if my site goes down?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
+            <button type="button" class="faq-q">What if my site goes down?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
             <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>We monitor your site for downtime and will alert you as soon as we detect an issue. In most cases we can diagnose the cause quickly — whether it's a plugin conflict, a hosting problem, or something else — and advise on the fastest fix. Note that downtime caused by your hosting provider is outside our direct control, but we'll be with you throughout.</p></div></div></div>
           </div>
 
           <div class="faq-item">
-            <button class="faq-q">If you build me a website, can you also manage it?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
-            <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>Absolutely. In fact, this is the perfect scenario for us, as we'll fully understand the website's code, so there's no awkward transition period. We build websites with optimization in mind, and would continue managing it that way.</p></div></div></div>
+            <button type="button" class="faq-q">If you build me a website, can you also manage it?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
+            <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>Absolutely. In fact, this is the perfect scenario for us, as we'll fully understand the website's code, so there's no awkward transition period. We build websites with optimization in mind, and would continue managing it that way. In addition, if we make your site and continue to manage it afterwards, there'll be no set-up fee to pay.</p></div></div></div>
           </div>
 
         </div>
+        </div></div>
       </div>
 
       <!-- Local SEO -->
       <div class="faq-category">
-        <div class="faq-cat-label">Local SEO</div>
+        <button type="button" class="faq-cat-btn">Local SEO<span class="faq-cat-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
+        <div class="faq-cat-wrap"><div class="faq-cat-inner">
         <div class="faq-list">
 
           <div class="faq-item">
-            <button class="faq-q">What's the difference between GBP management and local SEO?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
-            <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>GBP management focuses on your Google Business Profile, the listing that appears in Maps and the Local Pack. Local SEO is broader: it covers your website's organic rankings, how your business is listed across the web (citations), and making sure everything is consistent and optimised to help you show up in local searches. The two services complement each other well, but each delivers value on its own.</p></div></div></div>
+            <button type="button" class="faq-q">What's the difference between GBP management and local SEO?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
+            <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>GBP management focuses on your Google Business Profile — the listing that appears in Maps and the Local Pack — and includes keeping your directory citations consistent across the web. Local SEO is broader: it covers your website's organic rankings, targeting the right local search terms, and making sure your site is properly structured to show up in local searches beyond just Maps. The two services complement each other well, but each delivers value on its own.</p></div></div></div>
           </div>
 
           <div class="faq-item">
-            <button class="faq-q">What are citations and why do they matter?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
-            <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>Citations are mentions of your business name, address, and phone number on other websites: directories like Yell, Yelp, Thomson Local, and dozens of others. When these are consistent and accurate, they act as a trust signal to Google and help strengthen your local rankings. When they're inconsistent, such as old addresses or incorrect phone numbers, they can quietly hold you back.</p></div></div></div>
+            <button type="button" class="faq-q">What are citations and why do they matter?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
+            <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>Citations are mentions of your business name, address, and phone number on other websites: directories like Yell, Yelp, Thomson Local, and dozens of others. When these are consistent and accurate, they act as a trust signal to Google and help strengthen your local rankings. When they're inconsistent (old addresses or incorrect phone numbers) they can quietly hold you back. Because citations exist primarily to support your Google Business Profile, citation management is included in our GBP management package rather than local SEO.</p></div></div></div>
           </div>
 
           <div class="faq-item">
-            <button class="faq-q">How long does local SEO take to show results?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
+            <button type="button" class="faq-q">How long does local SEO take to show results?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
             <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>Local SEO is a longer-term investment than GBP management. Citation cleanup and consistency improvements can take 4-12 weeks to be reflected in search. Keyword ranking improvements typically build over 3–6 months as Google indexes changes to your site and picks up the updated signals across the web. We'll set realistic expectations from the start and show you progress in your monthly report.</p></div></div></div>
           </div>
 
           <div class="faq-item">
-            <button class="faq-q">Do you make changes directly to my website as part of local SEO?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
+            <button type="button" class="faq-q">Do you make changes directly to my website as part of local SEO?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
             <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>Yes. Because we only offer local SEO as part of our full package, we'll already have access to your website through our website management service. Any on-page SEO work gets implemented directly, so you don't have to action anything yourself or involve a separate developer.</p></div></div></div>
           </div>
 
           <div class="faq-item">
-            <button class="faq-q">Can I sign-up to the Local SEO service only?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
-            <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>No. We only offer local SEO as part of our full package, alongside GBP management and website management. The reason is straightforward: local SEO results depend heavily on the health of your Google Business Profile and your website. If those aren't being actively managed, the external work we do on citations, schema markup, and backlinks will only go so far. Keeping all three under one roof means everything works together and you get the best possible results.</p></div></div></div>
+            <button type="button" class="faq-q">Can I sign-up to the Local SEO service only?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
+            <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>No. We only offer local SEO as part of our full package, alongside GBP management and website management. The reason is straightforward: local SEO results depend heavily on the health of your Google Business Profile and your website. If those aren't being actively managed, the on-page and keyword work we do will only go so far. Keeping all three under one roof means everything works together and you get the best possible results.</p></div></div></div>
           </div>
 
         </div>
+        </div></div>
       </div>
 
       <!-- Pricing & Billing -->
       <div class="faq-category">
-        <div class="faq-cat-label">Pricing &amp; Billing</div>
+        <button type="button" class="faq-cat-btn">Pricing &amp; Billing<span class="faq-cat-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
+        <div class="faq-cat-wrap"><div class="faq-cat-inner">
         <div class="faq-list">
 
           <div class="faq-item">
-            <button class="faq-q">Why don't you give any prices?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
-            <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>Because our pricing depends on your situation: the volume of reviews you receive, the complexity of your website, how many locations you have, and what shape your online presence is currently in. Two businesses in the same sector can represent very different amounts of work, so a fixed price list would either underserve you or overcharge you. What we can say is that services start from £150/month. Get in touch and we'll give you a straightforward quote based on your actual needs, with no obligation.</p></div></div></div>
+            <button type="button" class="faq-q">Why don't you give any prices?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
+            <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>Because our pricing depends on your situation: the volume of reviews you receive, the complexity of your website, how many locations you have, and what shape your online presence is currently in. Two businesses in the same sector can represent very different amounts of work, so a fixed price list would either underserve or overcharge you. What we can say is that services start from £150/month. Get in touch and we'll give you a straightforward quote based on your actual needs, with no obligation.</p></div></div></div>
           </div>
 
           <div class="faq-item">
-            <button class="faq-q">What's included in the free audit?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
-            <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>If you're interested in GBP management, we'll review your current Google Business Profile, identify the most obvious gaps and opportunities, and give you a plain-English summary of what we find: no jargon or hard sell. It's genuinely free and there's no obligation to work with us afterwards.</p></div></div></div>
+            <button type="button" class="faq-q">What's included in the free audit?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
+            <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>If you're interested in GBP management, we'll review your current Google Business Profile, identify the most obvious gaps and opportunities, and give you a plain-English summary of what we find. It's genuinely free and there's no obligation to work with us afterwards.</p></div></div></div>
           </div>
 
           <div class="faq-item">
-            <button class="faq-q">What does the setup fee cover?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
-            <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>Each service has a one-time setup fee that covers the initial audit, configuration, and groundwork. For GBP management, that includes full profile optimisation, fixing existing issues, and catching up on unanswered reviews. For website management and local SEO, it covers the initial audit and setup of our monitoring and processes. It's the heavy lifting that gets everything in good shape from day one.</p></div></div></div>
+            <button type="button" class="faq-q">What does the setup fee cover?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
+            <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>Each service has a one-time setup fee that covers the initial audit, configuration, and groundwork. For GBP management, that includes full profile optimisation, fixing existing issues, catching up on unanswered reviews, and an initial citation audit. For website management and local SEO, it covers the initial audit and setup of our monitoring and processes. It's the heavy lifting that gets everything in good shape from day one.</p></div></div></div>
           </div>
 
           <div class="faq-item">
-            <button class="faq-q">When do I get billed?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
+            <button type="button" class="faq-q">When do I get billed?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
             <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>You pay the setup fee upfront before we start work. After that, your monthly fee is charged in advance on or around the same date you signed up. Stripe handles all billing automatically.</p></div></div></div>
           </div>
 
           <div class="faq-item">
-            <button class="faq-q">What happens if a payment fails?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
+            <button type="button" class="faq-q">What happens if a payment fails?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
             <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>Stripe will automatically retry and notify both of us. If you're unable to pay for any reason, just get in touch and we'll sort it out. If it goes past 7 days without resolution, the service will pause until payment is resolved.</p></div></div></div>
           </div>
 
           <div class="faq-item">
-            <button class="faq-q">What's your refund policy?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
+            <button type="button" class="faq-q">What's your refund policy?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
             <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>All fees are non-refundable once paid. Monthly fees are charged in advance for the upcoming month of service, and setup fees cover work that begins immediately. That said, if you're genuinely unhappy, let us know: if we can't resolve it, you can cancel at any time.</p></div></div></div>
           </div>
 
           <div class="faq-item">
-            <button class="faq-q">Can I cancel at any time?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
+            <button type="button" class="faq-q">Can I cancel at any time?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
             <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>Yes. We work on a rolling monthly basis with no long-term contracts. If you want to stop, just let us know before your next billing date and that's that. No awkward conversations, no exit fees.</p></div></div></div>
           </div>
 
         </div>
+        </div></div>
       </div>
 
     </div>
@@ -1663,6 +1648,25 @@ footer{background:#080d14;border-top:1px solid rgba(255,255,255,.05);padding:4.5
 </footer>
 
 <script>
+/* ── SCROLL RESTORATION ─────────────────────────────── */
+(function(){
+  if (!('scrollRestoration' in history)) return;
+  history.scrollRestoration = 'manual';
+  const saved = sessionStorage.getItem('scrollY');
+  if (saved) {
+    window.addEventListener('load', () => {
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          window.scrollTo(0, parseInt(saved, 10));
+        });
+      });
+    });
+  }
+  window.addEventListener('beforeunload', () => {
+    sessionStorage.setItem('scrollY', window.scrollY);
+  });
+})();
+
 /* ── PORTFOLIO PREVIEW SCALE ─────────────────────────── */
 function setPreviewScale() {
   document.querySelectorAll('.preview-iframe-wrap').forEach(wrap => {
@@ -1794,17 +1798,30 @@ const stepObs=new IntersectionObserver(entries=>{
 document.querySelectorAll('.process-step').forEach(el=>stepObs.observe(el));
 
 /* ── FAQ ACCORDION ───────────────────────────────────── */
+// Category-level accordion
+document.querySelectorAll('.faq-cat-btn').forEach(btn => {
+  btn.addEventListener('click', e => {
+    e.preventDefault();
+    const cat = btn.closest('.faq-category');
+    const isOpen = cat.classList.contains('cat-open');
+    // Close all categories and their open questions
+    document.querySelectorAll('.faq-category.cat-open').forEach(el => {
+      el.classList.remove('cat-open');
+      el.querySelectorAll('.faq-item.open').forEach(q => q.classList.remove('open'));
+    });
+    if (!isOpen) cat.classList.add('cat-open');
+  });
+});
+// Question-level accordion
 document.querySelectorAll('.faq-q').forEach(btn => {
-  btn.addEventListener('click', () => {
+  btn.addEventListener('click', e => {
+    e.preventDefault();
     const item = btn.closest('.faq-item');
     const isOpen = item.classList.contains('open');
-    // Close all
     document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
-    // Toggle clicked
     if (!isOpen) item.classList.add('open');
   });
 });
-
 
 document.querySelectorAll('a[href^="#"]').forEach(a=>{
   a.addEventListener('click',e=>{
