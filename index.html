@@ -3,8 +3,38 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Aveline.Digital provides Google Business Profile management, website management, local SEO, and website builds for local businesses in North Somerset and the surrounding area.">
+<meta name="author" content="Aveline.Digital">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#1a6dff">
+
 <title>Aveline.Digital — Local Digital Marketing for Small Businesses</title>
-<link rel="icon" href="favicon.svg" sizes="any" type="image/svg+xml">
+
+<!-- Canonical -->
+<link rel="canonical" href="https://aveline.digital/">
+
+<!-- Favicon -->
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_GB">
+<meta property="og:url" content="https://aveline.digital/">
+<meta property="og:title" content="Aveline.Digital — Local Digital Marketing for Small Businesses">
+<meta property="og:description" content="Aveline.Digital provides Google Business Profile management, website management, local SEO, and website builds for local businesses in North Somerset and the surrounding area.">
+<meta property="og:image" content="https://aveline.digital/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Aveline.Digital">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Aveline.Digital — Local Digital Marketing for Small Businesses">
+<meta name="twitter:description" content="Aveline.Digital provides Google Business Profile management, website management, local SEO, and website builds for local businesses in North Somerset and the surrounding area.">
+<meta name="twitter:image" content="https://aveline.digital/og-image.jpg">
 <style>
 /* ── RESET ─────────────────────────────────────────── */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;user-select:none;}
@@ -527,20 +557,59 @@ footer{background:#080d14;border-top:1px solid rgba(255,255,255,.05);padding:4.5
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
+  "@type": "ProfessionalService",
+  "@id": "https://aveline.digital/#business",
   "name": "Aveline.Digital",
   "url": "https://aveline.digital",
   "description": "Aveline.Digital provides Google Business Profile management, website management, local SEO, and website builds for local businesses in North Somerset and the surrounding area.",
-  "areaServed": {
-    "@type": "AdministrativeArea",
-    "name": "North Somerset"
-  },
-  "serviceType": [
-    "Google Business Profile Management",
-    "Website Management",
-    "Local SEO",
-    "Website Build"
+  "areaServed": [
+    {
+      "@type": "AdministrativeArea",
+      "name": "North Somerset"
+    },
+    {
+      "@type": "AdministrativeArea",
+      "name": "Somerset"
+    }
   ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Local Digital Marketing Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Google Business Profile Management",
+          "provider": {"@id": "https://aveline.digital/#business"}
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Website Management",
+          "provider": {"@id": "https://aveline.digital/#business"}
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Local SEO",
+          "provider": {"@id": "https://aveline.digital/#business"}
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Website Build",
+          "provider": {"@id": "https://aveline.digital/#business"}
+        }
+      }
+    ]
+  },
   "priceRange": "££",
   "sameAs": []
 }
@@ -1429,17 +1498,12 @@ footer{background:#080d14;border-top:1px solid rgba(255,255,255,.05);padding:4.5
 
           <div class="faq-item">
             <button type="button" class="faq-q">What about hosting and domain names?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
-            <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>Domain registration and hosting aren't included in the build price, but we'll advise you on the best options for your situation and help you get set up. You own both: they're registered in your name and you keep full control.</p></div></div></div>
+            <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>Domain registration and hosting aren't included in the build price, but we'll advise you on the best options for your situation and help you get set up.</p></div></div></div>
           </div>
 
           <div class="faq-item">
             <button type="button" class="faq-q">Can you manage the site after it's built?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
             <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>Absolutely. In fact, this is the ideal setup. Because we built it, there's no handover friction; we already know the site inside out. Ongoing management is available as a separate monthly service, covering content updates, security, performance, and reporting. And, as an added bonus: if we make your site and you choose to have us continue to maintain it after it's been built, there'll be no set-up fee for the website management service.</p></div></div></div>
-          </div>
-
-          <div class="faq-item">
-            <button type="button" class="faq-q">Why don't you have a Google Business Profile?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
-            <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>Google only allows businesses with a physical location that customers can visit, or that serve customers face-to-face within a defined area, to have a Google Business Profile. As an online-only service business, we don't meet either condition, so we're not eligible for one. We're in good company: many legitimate service businesses operate the same way. It's one of those quirks of the platform worth knowing about, which is why we've explained it here rather than leaving you to wonder.</p></div></div></div>
           </div>
 
         </div>
