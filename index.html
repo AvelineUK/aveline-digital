@@ -344,7 +344,7 @@ section{padding:clamp(5rem,10vw,9rem) 0;scroll-margin-top:72px}
 .expect-body{font-size:1rem;font-weight:300;color:var(--muted);line-height:1.8;margin-bottom:2rem}
 .promise-list{list-style:none;display:flex;flex-direction:column;gap:.8rem}
 .promise-list li{display:flex;align-items:flex-start;gap:.8rem;font-size:.9rem;color:var(--ink-soft);line-height:1.5}
-.check{width:20px;height:20px;flex-shrink:0;border:1px solid var(--blue);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--blue);font-size:.6rem;margin-top:2px}
+.check{width:20px;height:20px;flex-shrink:0;border:1px solid var(--blue);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--blue);font-size:.6rem;}
 
 /* ── FAQ ────────────────────────────────────────────── */
 .faq{background:var(--bg)}
@@ -442,8 +442,8 @@ footer{background:#080d14;border-top:1px solid rgba(255,255,255,.05);padding:4.5
 .reveal-delay-2{transition-delay:.2s}
 .reveal-delay-3{transition-delay:.3s}
 
-.reveal-left{opacity:0;transform:translateX(-32px);transition:opacity .75s cubic-bezier(.16,1,.3,1),transform .75s cubic-bezier(.16,1,.3,1)}
-.reveal-right{opacity:0;transform:translateX(32px);transition:opacity .75s cubic-bezier(.16,1,.3,1),transform .75s cubic-bezier(.16,1,.3,1)}
+.reveal-left{opacity:0;transform:translateX(-200px);transition:opacity 5s cubic-bezier(.16,1,.3,1),transform 5s cubic-bezier(.16,1,.3,1)}
+.reveal-right{opacity:0;transform:translateX(200px);transition:opacity 5s cubic-bezier(.16,1,.3,1),transform 5s cubic-bezier(.16,1,.3,1)}
 .reveal-left.visible,.reveal-right.visible{opacity:1;transform:translateX(0)}
 
 /* ════════════════════════════════════════════════════
@@ -524,6 +524,12 @@ footer{background:#080d14;border-top:1px solid rgba(255,255,255,.05);padding:4.5
 @media(max-width:1280px){
   .process-steps{grid-template-columns:1fr 1fr;gap:2rem}
   .process-steps::before{display:none}
+  .process-step{display:grid;grid-template-columns:54px 1fr;grid-template-rows:auto auto;column-gap:1rem;align-items:center}
+  .process-step .step-circle{margin-bottom:0;grid-row:1;grid-column:1}
+  .process-step .step-title{grid-row:1;grid-column:2;margin-bottom:0}
+  .process-step .step-desc{grid-row:2;grid-column:2}
+  .reveal-left{opacity:0;transform:translateX(-32px);transition:opacity 2s cubic-bezier(.16,1,.3,1),transform 2s cubic-bezier(.16,1,.3,1)}
+  .reveal-right{opacity:0;transform:translateX(32px);transition:opacity 2s cubic-bezier(.16,1,.3,1),transform 2s cubic-bezier(.16,1,.3,1)}
 }
 @media(max-width:1024px){
   .about-grid,.process-header,.expect-grid,.service-section-header{grid-template-columns:1fr}
@@ -542,6 +548,10 @@ footer{background:#080d14;border-top:1px solid rgba(255,255,255,.05);padding:4.5
   .hero-stat{min-width:50%;border-bottom:1px solid var(--border)}
   .form-row{grid-template-columns:1fr}
   .services-grid{grid-template-columns:1fr}
+  .process-step{display:grid;grid-template-columns:54px 1fr;grid-template-rows:auto auto;column-gap:1rem;align-items:center}
+  .process-step .step-circle{margin-bottom:0;grid-row:1;grid-column:1}
+  .process-step .step-title{grid-row:1;grid-column:2;margin-bottom:0}
+  .process-step .step-desc{grid-row:2;grid-column:2}
 }
 @media(max-width:830px){
   .portfolio-grid{grid-template-columns:1fr}
@@ -550,6 +560,10 @@ footer{background:#080d14;border-top:1px solid rgba(255,255,255,.05);padding:4.5
 }
 @media(max-width:768px){
   .about-pillars,.sectors-grid,.footer-grid,.services-grid,.process-steps{grid-template-columns:1fr}
+  .process-step{display:grid;grid-template-columns:54px 1fr;grid-template-rows:auto auto;column-gap:1rem;align-items:center}
+  .process-step .step-circle{margin-bottom:0;grid-row:1;grid-column:1}
+  .process-step .step-title{grid-row:1;grid-column:2;margin-bottom:0}
+  .process-step .step-desc{grid-row:2;grid-column:2}
   .hero-stat{min-width:100%}
   .modal-header,.modal-body{padding-left:1.4rem;padding-right:1.4rem}
 }
@@ -888,7 +902,7 @@ footer{background:#080d14;border-top:1px solid rgba(255,255,255,.05);padding:4.5
 <section class="about" id="about">
   <div class="container">
     <div class="about-grid">
-      <div>
+      <div class=" reveal-left reveal-delay-1">
         <div class="tag reveal"><span class="blink"></span>Who We Are</div>
         <h2 class="s-title reveal reveal-delay-1">Your local presence<br>is our <span class="b">only focus</span></h2>
         <p class="about-body reveal reveal-delay-2">Aveline.Digital exists to make sure that when someone nearby searches for what you do, you're the business they find, trust, and call. We manage your Google Business Profile, your website, and your local SEO, so you can focus on running your business.</p>
@@ -900,13 +914,13 @@ footer{background:#080d14;border-top:1px solid rgba(255,255,255,.05);padding:4.5
           <div class="pillar"><div class="pillar-name">Local-First</div><div class="pillar-desc">Local is all we do, and we do it well.</div></div>
         </div>
       </div>
-      <div class="about-visual reveal reveal-delay-2" style="user-select: none;">
+      <div class="about-visual reveal-right reveal-delay-1" style="user-select: none;">
         <div class="about-screen">
           <div class="screen-bar">
             <div class="screen-dot sd-r"></div>
             <div class="screen-dot sd-y"></div>
             <div class="screen-dot sd-g"></div>
-            <div class="screen-url">google.com/maps · "plumber near me"</div>
+            <div class="screen-url">google.com/maps "plumber near me"</div>
           </div>
           <div class="screen-body">
             <div class="gbp-card">
@@ -940,12 +954,12 @@ footer{background:#080d14;border-top:1px solid rgba(255,255,255,.05);padding:4.5
   <div class="container">
     <div class="service-section-header">
       <div>
-        <div class="service-section-tag reveal-left">Google Business Profile Management</div>
-        <h2 class="s-title reveal-left reveal-delay-1">Your Map listing,<br><span class="b">properly managed.</span></h2>
+        <div class="service-section-tag reveal-right">Google Business Profile Management</div>
+        <h2 class="s-title reveal-right reveal-delay-1">Your Map listing,<br><span class="b">properly managed.</span></h2>
       </div>
       <p class="service-section-intro reveal-right reveal-delay-2">Your Google Business Profile is often the first thing a local customer sees. We keep it optimised, active, and working hard to rank in the Local Pack and on Maps — and we make sure the wider web backs it up too.</p>
     </div>
-    <div class="services-grid reveal">
+    <div class="services-grid reveal-delay-1 reveal-right">
       <div class="service-card">
         <div class="service-num">01</div>
         <div class="service-icon">
@@ -1000,9 +1014,9 @@ footer{background:#080d14;border-top:1px solid rgba(255,255,255,.05);padding:4.5
         <div class="service-section-tag reveal-left">Website Build</div>
         <h2 class="s-title reveal-left reveal-delay-1">No website?<br><span class="b">We'll build one.</span></h2>
       </div>
-      <p class="service-section-intro reveal-right reveal-delay-2">A website is a trust signal, a ranking factor, and the foundation your GBP listing needs to perform. If you don't have one, or your current one isn't up to the job, we'll build something clean, fast, and purpose-built for local search.</p>
+      <p class="service-section-intro reveal-left reveal-delay-2">A website is a trust signal, a ranking factor, and the foundation your GBP listing needs to perform. If you don't have one, or your current one isn't up to the job, we'll build something clean, fast, and purpose-built for local search.</p>
     </div>
-    <div class="services-grid reveal">
+    <div class="services-grid reveal-delay-1 reveal-left">
       <div class="service-card">
         <div class="service-num">01</div>
         <div class="service-icon">
@@ -1049,8 +1063,8 @@ footer{background:#080d14;border-top:1px solid rgba(255,255,255,.05);padding:4.5
 
     <!-- Portfolio previews -->
     <div class="portfolio-strip reveal">
-      <div class="portfolio-label">Examples of our work</div>
-      <div class="portfolio-grid">
+      <div class="portfolio-label reveal-delay-1 reveal-right"">Examples of our work</div>
+      <div class="portfolio-grid reveal-delay-1 reveal-right">
 
         <!-- Demo 1 -->
         <div class="preview-card">
@@ -1128,9 +1142,9 @@ footer{background:#080d14;border-top:1px solid rgba(255,255,255,.05);padding:4.5
         <div class="service-section-tag reveal-left">Website Management</div>
         <h2 class="s-title reveal-left reveal-delay-1">Your website,<br><span class="b">kept in order.</span></h2>
       </div>
-      <p class="service-section-intro reveal-right reveal-delay-2">Whether your site is built on WordPress, Wix, Squarespace, or something else entirely, we handle the ongoing management so it stays accurate and working within the limits of your platform.</p>
+      <p class="service-section-intro reveal-left reveal-delay-2">Whether your site is built on WordPress, Wix, Squarespace, or something else entirely, we handle the ongoing management so it stays accurate and working within the limits of your platform.</p>
     </div>
-    <div class="services-grid reveal">
+    <div class="services-grid reveal-delay-1 reveal-left">
       <div class="service-card">
         <div class="service-num">01</div>
         <div class="service-icon">
@@ -1182,12 +1196,12 @@ footer{background:#080d14;border-top:1px solid rgba(255,255,255,.05);padding:4.5
   <div class="container">
     <div class="service-section-header">
       <div>
-        <div class="service-section-tag reveal-left">Local SEO</div>
-        <h2 class="s-title reveal-left reveal-delay-1">Rank higher,<br><span class="b">locally.</span></h2>
+        <div class="service-section-tag reveal-right">Local SEO</div>
+        <h2 class="s-title reveal-right reveal-delay-1">Rank higher,<br><span class="b">locally.</span></h2>
       </div>
       <p class="service-section-intro reveal-right reveal-delay-2">Ranking well on Google Maps is only part of the picture. Local SEO makes sure your website is working just as hard as your profile — targeting the right search terms, structured for local rankings, and visible in organic results as well as Maps.</p>
     </div>
-    <div class="services-grid reveal">
+    <div class="services-grid reveal-right reveal-delay-1">
       <div class="service-card">
         <div class="service-num">01</div>
         <div class="service-icon">
@@ -1236,12 +1250,12 @@ footer{background:#080d14;border-top:1px solid rgba(255,255,255,.05);padding:4.5
 
 <section class="process" id="process">
   <div class="container">
-    <div class="tag reveal"><span class="blink"></span>How It Works</div>
+    <div class="tag reveal-left reveal-delay-1"><span class="blink"></span>How It Works</div>
     <div class="process-header">
-      <h2 class="s-title reveal">Simple process<br><span class="b">Clear steps</span></h2>
-      <p class="process-intro reveal reveal-delay-1">From your first conversation to an active, optimised presence in local search, we handle the heavy lifting and keep you informed at every stage.</p>
+      <h2 class="s-title reveal-left reveal-delay-1">Simple process<br><span class="b">Clear steps</span></h2>
+      <p class="process-intro reveal-left reveal-delay-1">From your first conversation to an active, optimised presence in local search, we handle the heavy lifting and keep you informed at every stage.</p>
     </div>
-    <div class="process-steps">
+    <div class="process-steps reveal-left reveal-delay-1">
       <div class="process-step">
         <div class="step-circle"><div class="step-num">01</div></div>
         <div class="step-title">Free Audit</div>
@@ -1268,7 +1282,7 @@ footer{background:#080d14;border-top:1px solid rgba(255,255,255,.05);padding:4.5
 
 <!-- WHAT TO EXPECT (replaces fabricated results section) -->
 <section class="expect" id="expect">
-  <div class="container">
+  <div class="container reveal-right reveal-delay-1">
     <div class="expect-grid">
       
       <div class="expect">
@@ -1327,7 +1341,7 @@ footer{background:#080d14;border-top:1px solid rgba(255,255,255,.05);padding:4.5
 
 <!-- SECTORS -->
 <section class="sectors" id="sectors">
-  <div class="container">
+  <div class="container reveal-left reveal-delay-1">
     <div class="sectors-header">
       <div class="tag"><span class="blink"></span>Who We Work With</div>
       <h2 class="s-title reveal">We focus on <span class="b">local businesses</span></h2>
@@ -1458,7 +1472,7 @@ footer{background:#080d14;border-top:1px solid rgba(255,255,255,.05);padding:4.5
 
           <div class="faq-item">
             <button type="button" class="faq-q">Can you guarantee I'll rank #1?<span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
-            <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>No, and anyone who promises guaranteed rankings isn't being straight with you. We can't control Google's algorithm or what your competitors do. What we can do is optimise your profile using best practices, keep it active and professional, and give you the best possible chance of showing up when it matters.</p></div></div></div>
+            <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a"><p>No, and anyone who promises guaranteed rankings isn't being honest with you. We can't control Google's algorithm or what your competitors do. What we can do is optimise your profile using best practices, keep it active and professional, and give you the best possible chance of showing up when it matters.</p></div></div></div>
           </div>
 
           <div class="faq-item">
