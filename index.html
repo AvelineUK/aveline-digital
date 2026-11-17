@@ -218,16 +218,16 @@ nav.scrolled{background:rgba(13,17,23,.95);backdrop-filter:blur(16px);border-col
 .hero-grid-bg{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.03)1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03)1px,transparent 1px);background-size:60px 60px;-webkit-mask-image:radial-gradient(ellipse 80% 80% at 55% 40%,black 20%,transparent 100%);mask-image:radial-gradient(ellipse 80% 80% at 55% 40%,black 20%,transparent 100%)}
 .hero-orb{position:absolute;top:-20%;right:-10%;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(26,109,255,.14)0%,transparent 65%);pointer-events:none;animation:orb-drift 8s ease-in-out infinite}
 @keyframes orb-drift{0%,100%{top:-20%;right:-10%}50%{top:-10%;right:-5%}}
-.hero-content{position:relative;z-index:2;max-width:920px;animation:fadeUp .9s cubic-bezier(.16,1,.3,1) both}
+.hero-content{position:relative;z-index:2;max-width:1200px;animation:fadeUp .9s cubic-bezier(.16,1,.3,1) both}
 @keyframes fadeUp{from{opacity:0}to{opacity:1}}
 .hero-headline{font-family:var(--ff-head);font-size:clamp(4rem,9vw,8.5rem);font-weight:800;line-height:.92;letter-spacing:.01em;color:var(--ink);margin-bottom:2rem;text-transform:uppercase}
 .hero-headline .outline{display:block;color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.15)}
 .hero-headline .hl{color:var(--blue)}
-.hero-sub{font-size:clamp(1rem,1.5vw,1.12rem);font-weight:300;color:var(--muted);max-width:500px;line-height:1.75;margin-bottom:3rem}
+.hero-sub{font-size:clamp(1rem,1.5vw,1.12rem);font-weight:300;color:var(--muted);max-width:1200px;line-height:1.75;margin-bottom:3rem}
 .hero-actions{display:flex;align-items:center;gap:1.2rem;flex-wrap:wrap}
 .btn-primary{display:inline-flex;align-items:center;gap:.4rem;background:var(--blue);color:#fff;padding:.85rem 2rem;font-family:var(--ff-head);font-size:.85rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border-radius:var(--radius);border:none;cursor:pointer;transition:background .2s,box-shadow .2s;box-shadow:0 2px 16px rgba(26,109,255,.2)}
 .btn-primary:hover{background:var(--blue-dk);box-shadow:0 4px 28px var(--blue-glow)}
-.btn-ghost{display:inline-flex;align-items:center;gap:.5rem;color:var(--ink-soft);font-family:var(--ff-head);font-size:.85rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid var(--border);padding:.85rem 2rem;border-radius:var(--radius);transition:color .2s,border-color .2s;background:transparent}
+.btn-ghost{display:inline-flex;align-items:center;gap:.4rem;color:var(--ink-soft);font-family:var(--ff-head);font-size:.85rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid var(--border);padding:.85rem 2rem;border-radius:var(--radius);transition:color .2s,border-color .2s;background:transparent}
 .btn-ghost:hover{color:var(--ink);border-color:var(--border-hi)}
 .hero-stats{position:relative;z-index:2;display:flex;gap:0;margin-top:5rem;border-top:1px solid var(--border);animation:fadeUp .9s .2s cubic-bezier(.16,1,.3,1) both}
 .hero-stat{flex:1;padding:1.8rem 2rem;border-right:1px solid var(--border);transition:background .25s}
@@ -869,10 +869,10 @@ footer{background:#080d14;border-top:1px solid rgba(255,255,255,.05);padding:4.5
   <div class="hero-content container">
     <div class="tag"><span class="blink"></span>Now taking new clients</div>
     <h1 class="hero-headline">
-      Own your<br>
-      <span class="hl">local presence</span>
+      Your local presence<br>
+      <span class="hl">working harder</span>
     </h1>
-    <p class="hero-sub">We manage your Google Business Profile, website, and local SEO, and build websites for businesses that need one. So local customers find you first and choose you over everyone else.</p>
+    <p class="hero-sub">We help local businesses attract more customers through better Google visibility, professionally managed websites and practical local SEO. From keeping your Google profile up to date to making sure your website turns visitors into enquiries, we take care of the digital side of your business.</p>
     <div class="hero-actions">
       <button class="btn-primary" onclick="openModal('contactModal')">Get in touch</button>
       <a href="#gbp" class="btn-ghost">See our services</a>
